@@ -4,7 +4,16 @@
 
 ## 1. 저장소 만들기
 
-GitHub에서 **Private repository**를 만들고 이 폴더의 파일을 업로드합니다. `.state/telegram.dpapi`와 원본 HWP/XLSX 파일은 업로드하지 않습니다. `cloud-data/recipes.ndjson`는 공개 자료에서 만든 검색 색인입니다.
+GitHub에서 **Private repository**를 만들고 이 폴더를 연결합니다. 저장소 이름은 예를 들어 `baby-meal-telegram`으로 하면 됩니다. 초기 README·.gitignore·License는 만들지 않습니다.
+
+이 폴더에서 처음 한 번만 실행합니다.
+
+```powershell
+git remote add origin https://github.com/<GitHub사용자명>/baby-meal-telegram.git
+git push -u origin main
+```
+
+`.state/telegram.dpapi`와 원본 HWP/XLSX 파일은 업로드하지 않습니다. `cloud-data/recipes.ndjson`는 공개 자료에서 만든 검색 색인입니다. 저장소 주소가 다르면 `origin` URL만 실제 주소로 바꿉니다.
 
 ## 2. Secrets 등록
 
