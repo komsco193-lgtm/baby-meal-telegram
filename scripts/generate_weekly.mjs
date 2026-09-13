@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'cloud-data', 'recipes.ndjson');
 const SEASONAL = path.join(ROOT, 'cloud-data', 'seasonal.json');
+const KOREAN_SOURCES = path.join(ROOT, 'cloud-data', 'korean-sources.json');
 const MENU_DIR = path.join(ROOT, 'menus', 'weekly');
 const BOARD_URL = 'https://www.eunpyeongcenter.co.kr/sub02/sub01.php';
 
@@ -69,6 +70,8 @@ function isToddlerSource(row) { return /1-2세|1~2세/.test(row.postTitle); }
 function mealIs(row, pattern) { return pattern.test(norm(row.meal)); }
 function hasMainName(row) { return /죽|진밥|덮밥|볶음밥|밥/.test(row.name) && !snackOnly.test(row.name); }
 function ingredientNames(row) { return row.ingredients.map(i => String(i.name || '')).filter(n => n && n !== '-'); }
+function hasProtein(row) { return /소고기|쇠고기|돼지|돈육|닭|가자미|생선|임연수|달걀|계란|두부|콩/.test(ingredientNames(row).join(' ')); }
+function hasHighSodiumProcessedFood(row) { return /어묵|맛살|햄|소시지|베이컨|김치|젓갈|참치|멸치/.test(ingredientNames(row).join(' ')); }
 function latestByName(rows) {
   const map = new Map();
   for (const row of rows) {
@@ -86,11 +89,16 @@ function chooseCandidates(records, month, year) {
   const availableYears = [...new Set(monthRows.map(r => Number(String(r.sourceDate).slice(0, 4))))].sort((a, b) => b - a);
   const preferredYear = availableYears[0];
   const preferred = monthRows.filter(r => Number(String(r.sourceDate).slice(0, 4)) === preferredYear);
-  const breakfasts = latestByName(preferred.filter(r => isBabySource(r) && mealIs(r, /오전간식|오전/))
-    .filter(r => /죽|진밥|밥/.test(r.name) && !snackOnly.test(r.name)));
-  const mainsBaby = latestByName(preferred.filter(r => isBabySource(r) && mealIs(r, /중식|점심|저녁/)).filter(hasMainName));
-  const mainsToddler = latestByName(preferred.filter(r => isToddlerSource(r) && mealIs(r, /저녁|점심|중식/)).filter(hasMainName));
-  const mains = mainsBaby.length >= 5 ? mainsBaby : [...mainsBaby, ...mainsToddler];
+  const breakfastFilter = r => /죽|진밥|밥/.test(r.name) && !snackOnly.test(r.name);
+  const breakfastsToddler = latestByName(preferred.filter(r => isToddlerSource(r) && mealIs(r, /오전간식|오전/)).filter(breakfastFilter));
+  const breakfastsBaby = latestByName(preferred.filter(r => isBabySource(r) && mealIs(r, /오전간식|오전/)).filter(breakfastFilter));
+  const breakfasts = breakfastsToddler.length >= 2 ? breakfastsToddler : [...breakfastsToddler, ...breakfastsBaby];
+  const mainFilter = r => hasMainName(r) && hasProtein(r) && !hasHighSodiumProcessedFood(r);
+  const mainsToddler = latestByName(preferred.filter(r => isToddlerSource(r) && mealIs(r, /저녁|점심|중식/)).filter(mainFilter));
+  const mainsBaby = latestByName(preferred.filter(r => isBabySource(r) && mealIs(r, /중식|점심|저녁/)).filter(mainFilter));
+  // Use 1~2세 menus as the main pool, while retaining baby recipes so that
+  // iron/protein sources such as egg, tofu and fish can rotate into the week.
+  const mains = [...mainsToddler, ...mainsBaby];
   if (breakfasts.length < 2) throw new Error(`${preferredYear}년 ${month}월 아침 후보가 부족합니다.`);
   if (mains.length < 4) throw new Error(`${preferredYear}년 ${month}월 주식 후보가 부족합니다.`);
   return { preferredYear, breakfasts, mains };
@@ -111,7 +119,7 @@ function recipeScore(row, seasonalNames, usedNames, offset) {
 
 function proteinKey(row) {
   const text = ingredientNames(row).join(' ');
-  return text.match(/소고기|돼지|닭|가자미|생선|달걀|계란|두부|콩/)?.[0] || '식물성';
+  return text.match(/소고기|돼지|닭|가자미|임연수|생선|달걀|계란|두부|콩/)?.[0] || '식물성';
 }
 function sharesIngredient(name, selected) {
   const n = norm(name);
@@ -123,6 +131,28 @@ function chooseDistinct(rows, count, seasonalNames, offset, diversifyProtein = f
   const selectedIngredients = new Set();
   const selectedProteins = new Set();
   const pool = [...rows];
+  const addChosen = row => {
+    if (!row || used.has(norm(row.name))) return false;
+    chosen.push(row); used.add(norm(row.name));
+    ingredientNames(row).map(norm).forEach(n => selectedIngredients.add(n));
+    selectedProteins.add(proteinKey(row));
+    return true;
+  };
+  // Rotate distinct protein groups before filling the remaining slots. This
+  // prevents an ingredient-rich week from becoming beef-only or chicken-only.
+  if (diversifyProtein) {
+    const targetProteins = ['달걀', '두부', '닭', '가자미', '임연수', '생선', '소고기', '돼지'];
+    for (const target of targetProteins) {
+      if (chosen.length >= count) break;
+      const candidates = pool.filter(row => proteinKey(row).includes(target) && !used.has(norm(row.name)));
+      if (!candidates.length) continue;
+      candidates.sort((a, b) => recipeScore(b, seasonalNames, used, offset) - recipeScore(a, seasonalNames, used, offset));
+      const row = candidates[0];
+      const index = pool.indexOf(row);
+      if (index >= 0) pool.splice(index, 1);
+      addChosen(row);
+    }
+  }
   while (chosen.length < count && pool.length) {
     pool.sort((a, b) => {
       const score = row => {
@@ -140,9 +170,7 @@ function chooseDistinct(rows, count, seasonalNames, offset, diversifyProtein = f
     });
     const row = pool.shift();
     if (used.has(norm(row.name))) continue;
-    chosen.push(row); used.add(norm(row.name));
-    ingredientNames(row).map(norm).forEach(n => selectedIngredients.add(n));
-    selectedProteins.add(proteinKey(row));
+    addChosen(row);
   }
   return chosen;
 }
@@ -163,10 +191,30 @@ function normalizedIngredient(row, item) {
   const amount = item.grams;
   if (!name || name === '-' || prohibited.test(name)) return null;
   const n = norm(name);
-  if (n === '쌀' || n.includes('불린쌀')) return { name: '지은 밥(원문 쌀 대체)', amount: Number(amount || 0) * 2.5, unit: 'g' };
+  // The source workbooks often label plain rice as "멥쌀, 백미, 생것".
+  // The household plan is written for cooked rice, so convert those plain-rice
+  // entries with the same 2.5x cooking-yield assumption used for the exact
+  // "쌀"/"불린쌀" labels. Leave millet and other grains as their own items.
+  if (n === '쌀' || n.includes('불린쌀') || n.includes('멥쌀') || n.includes('백미')) {
+    return { name: '지은 밥(원문 쌀 대체)', amount: Number(amount || 0) * 2.5, unit: 'g' };
+  }
   if (n.includes('우유(두유)') || n === '두유') return { name: '살균 우유', amount: Number(amount || 0), unit: 'mL' };
   if (n.includes('요구르트')) return { name: '무가당 플레인 요거트', amount: Number(amount || 0), unit: 'g' };
-  return { name, amount: Number(amount || 0), unit: 'g' };
+  // Food-composition source rows may carry descriptors such as ", 생것",
+  // ", 뿌리" or ", 구근". They are useful in the provenance record but
+  // splitting them would make the shopping list look like duplicate foods.
+  const displayName = name
+    .replace(/\s*,\s*생것/g, '')
+    .replace(/\s*,\s*(뿌리|구근)\s*$/g, '')
+    .trim();
+  return { name: displayName || name, amount: Number(amount || 0), unit: 'g' };
+}
+
+function adaptedMenuName(value) {
+  let name = String(value || '').replace(/간장/g, '').replace(/데리야끼/g, '');
+  name = name.replace(/제육/g, '돼지고기').replace(/소불고기/g, '소고기');
+  name = name.replace(/\s+/g, ' ').trim();
+  return `${name || '가정용 메뉴'} (무염)`;
 }
 
 function makeRecipe(row, id, usedDates) {
@@ -189,7 +237,7 @@ function makeRecipe(row, id, usedDates) {
     usedDates,
     raw,
     steps,
-    name: row.name.replace(/\s+/g, ' ').trim(),
+    name: adaptedMenuName(row.name),
     adaptation: '원문 재료와 흐름을 바탕으로 쌀은 지은 밥으로 바꾸고, 가정용 무염 원칙에 따라 금지 양념을 제외했습니다. 분량과 질감은 12개월 아기의 섭취 능력에 맞춰 조정합니다.'
   };
 }
@@ -261,7 +309,7 @@ function purchaseLine(item) {
   return `• ${have ? '보유 재료(부족하면 보충)' : '추가 구매'}: ${item.name} ${pack} — 주간 사용량 약 ${Math.ceil(item.amount * 10) / 10}${item.unit}`;
 }
 
-function render(plan, weekStart) {
+function render(plan, weekStart, koreanSources) {
   const end = iso(plan.end);
   const recipeMap = new Map(plan.recipes.map(r => [r.id, r]));
   const lines = [];
@@ -269,6 +317,13 @@ function render(plan, weekStart) {
   lines.push('12개월 아기 · 무염 가정용 구성 · 아침·점심·저녁 21끼');
   lines.push('');
   lines.push('은평구 어린이·사회복지급식관리지원센터의 공개 원문 레시피를 바탕으로 가정용으로 다시 구성했습니다. 센터가 검수한 가정용 주간 식단이 아니며, 각 원문과 변경 사항을 아래에 따로 적었습니다.');
+  lines.push('');
+  lines.push('대한민국 기준 참고 출처');
+  for (const source of koreanSources) lines.push(`• ${source.name}: ${source.purpose} — ${source.url}`);
+  lines.push('');
+  lines.push('영양·섭취량 기준');
+  lines.push('질병관리청의 12~23개월 이유기보충식 기준(평균적인 수유량을 전제로 한 하루 약 550kcal, 하루 3~4회, 1회량은 열량 밀도에 따라 250mL 컵 3/4 정도에서 점차 1컵)을 참고합니다. 이는 참고 범위이며 모유·분유 섭취량, 실제 먹은 양, 성장 상태에 따라 달라지므로 억지로 먹이지 않습니다.');
+  lines.push('한국인 영양소 섭취기준과 국가표준식품성분표로 주간 식품군·철분·단백질·지방·채소 구성을 점검하지만, 개인의 과다·부족 섭취나 성장 문제를 식단만으로 진단하지 않습니다.');
   lines.push('');
   lines.push('이번 주 장보기 목록');
   for (const item of totalsForPlan(plan)) lines.push(purchaseLine(item));
@@ -282,15 +337,28 @@ function render(plan, weekStart) {
     lines.push(`| ${koreanDate(row.date)} | ${recipeMap.get(row.breakfast).name} | ${recipeMap.get(row.lunch).name} | ${recipeMap.get(row.dinner).name} |`);
   }
   lines.push('');
+  lines.push('날짜별 레시피');
+  lines.push('각 날짜 표의 재료는 아기 1회 제공 기준의 근사치이며, 실제 먹은 양은 식욕과 수유량에 맞춥니다.');
+  for (const row of plan.menuRows) {
+    lines.push('');
+    lines.push(`[${koreanDate(row.date)}]`);
+    lines.push('| 끼니 | 메뉴 | 1회분 재료 | 조리 |');
+    lines.push('|---|---|---|---|');
+    for (const [meal, id] of [['아침', row.breakfast], ['점심', row.lunch], ['저녁', row.dinner]]) {
+      const recipe = recipeMap.get(id);
+      const ingredients = recipe.ingredients.map(i => `${i.name} ${Math.round(i.amount * 10) / 10}${i.unit}`).join(', ') || '원문 표 확인';
+      const method = recipe.steps.join(' ');
+      lines.push(`| ${meal} | ${recipe.name} (${recipe.id}) | ${ingredients} | ${method} |`);
+    }
+  }
+  lines.push('');
   lines.push('모든 끼니 공통');
   lines.push('소금·간장·된장·액젓·가염 육수·설탕·꿀·후추는 넣지 않습니다. 식재료 자체 나트륨까지 0이라는 뜻은 아닙니다. 순살 생선도 잔가시를 다시 확인하고, 음식은 부드럽고 작게 잘라 옆에서 지켜보며 먹입니다.');
   lines.push('');
+  lines.push('원문 출처·가정용 변경 기록');
   for (const recipe of plan.recipes) {
     const dates = recipe.usedDates.map(u => `${koreanDate(u.date)} ${u.meal}`).join(', ');
     lines.push(`레시피 ${recipe.id} | ${recipe.name} (사용: ${dates})`);
-    lines.push(`재료: ${recipe.ingredients.map(i => `${i.name} ${Math.round(i.amount * 10) / 10}${i.unit}`).join(', ') || '원문 표를 확인'}.`);
-    recipe.steps.forEach((s, i) => lines.push(`${i + 1}. ${s}`));
-    if (recipe.raw) lines.push(`원문 조리 흐름 요지: ${recipe.raw}`);
     const r = recipe.row;
     lines.push(`원문: 은평구센터 「${r.postTitle}」, 게시일 ${r.posted}, ${r.filename}, ${r.sheet} ${r.range}, 원문 날짜 ${r.sourceDate} ${r.meal} ‘${r.name}’ (날짜 셀 ${r.dateCell}).`);
     lines.push(`변경: ${recipe.adaptation}`);
@@ -308,6 +376,7 @@ function render(plan, weekStart) {
   }
   lines.push('');
   lines.push(`출처 게시판: ${BOARD_URL}`);
+  lines.push('국내 기준 참고 출처는 위에 적은 질병관리청·대한소아청소년과학회·식품의약품안전처·한국영양학회·농촌진흥청 자료를 우선했습니다. 월령·성장·알레르기·실제 섭취량은 아기의 진료 내용과 제품 표시를 함께 확인합니다.');
   lines.push('원문 날짜와 이번 제공 날짜는 다를 수 있습니다. 원문 양념·분량·재료를 가정용 무염 기준으로 바꾼 부분은 각 레시피에 표시했습니다.');
   return lines.join('\n').trim() + '\n';
 }
@@ -321,26 +390,33 @@ const weekStart = process.env.WEEK_START?.trim() || nextMondayKst();
 const start = dateOnly(weekStart);
 const month = start.getUTCMonth() + 1;
 const year = start.getUTCFullYear();
-const existing = path.join(MENU_DIR, `${weekStart}.txt`);
+const revision = /^(1|true)$/i.test(String(process.env.REVISION || process.env.RUN_REVISION || ''));
+const forceRegenerate = /^(1|true)$/i.test(String(process.env.FORCE_REGENERATE || ''));
+const outputStem = revision ? `${weekStart}.revised` : weekStart;
+const existing = path.join(MENU_DIR, `${outputStem}.txt`);
 fs.mkdirSync(MENU_DIR, { recursive: true });
 const existingText = fs.existsSync(existing) ? fs.readFileSync(existing, 'utf8') : '';
-// Keep the already sent first week unchanged. Future legacy previews are
-// regenerated once so they receive the clearer table layout.
-const keepExisting = fs.existsSync(existing) && fs.statSync(existing).size > 0 &&
-  (weekStart === '2026-09-14' || existingText.includes('| 날짜 | 아침 |'));
+// Keep the already sent first week unchanged. A revision writes a separate
+// file and uses a separate idempotency key so the original receipt remains intact.
+const keepExisting = !forceRegenerate && fs.existsSync(existing) && fs.statSync(existing).size > 0 &&
+  (revision || weekStart === '2026-09-14' || (existingText.includes('| 날짜 | 아침 |') && existingText.includes('대한민국 기준 참고 출처')));
 if (keepExisting) {
   console.log(`기존 검증 식단을 유지합니다: ${existing}`);
 } else {
   const seasonal = fs.existsSync(SEASONAL) ? JSON.parse(fs.readFileSync(SEASONAL, 'utf8')) : {};
+  const koreanSources = fs.existsSync(KOREAN_SOURCES) ? JSON.parse(fs.readFileSync(KOREAN_SOURCES, 'utf8')) : [];
   const candidates = chooseCandidates(loadRecords(), month, year);
   const plan = buildPlan(weekStart, candidates, seasonal[String(month)] || null);
-  const text = render(plan, weekStart);
-  writeOutput(weekStart, text);
+  const text = render(plan, weekStart, koreanSources);
+  writeOutput(outputStem, text);
   const provenance = {
     generatedAt: new Date().toISOString(),
     weekStart,
     weekEnd: iso(plan.end),
+    revision,
+    outputFile: `menus/weekly/${outputStem}.txt`,
     sourceBoard: BOARD_URL,
+    koreanSources,
     preferredSourceYear: plan.preferredYear,
     seasonalSource: plan.seasonalInfo || null,
     meals: plan.menuRows,
@@ -351,7 +427,8 @@ if (keepExisting) {
     }})),
     note: '공개 원문 색인에서 추출한 출처를 가정용 무염 기준으로 재구성한 자동 생성 기록입니다.'
   };
-  fs.writeFileSync(path.join(MENU_DIR, `${weekStart}.sources.json`), safeJson(provenance), 'utf8');
+  fs.writeFileSync(path.join(MENU_DIR, `${outputStem}.sources.json`), safeJson(provenance), 'utf8');
   console.log(`새 식단을 작성했습니다: ${existing}`);
 }
-if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `week_start=${weekStart}\n`);
+if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT,
+  `week_start=${weekStart}\nmenu_file=menus/weekly/${outputStem}.txt\nsend_key=week-${weekStart}${revision ? '-revised' : ''}\n`);

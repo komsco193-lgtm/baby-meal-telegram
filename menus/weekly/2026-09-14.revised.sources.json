@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-13T22:35:24.902Z",
-  "weekStart": "2026-09-21",
-  "weekEnd": "2026-09-27",
-  "revision": false,
-  "outputFile": "menus/weekly/2026-09-21.txt",
+  "generatedAt": "2026-09-13T22:35:24.599Z",
+  "weekStart": "2026-09-14",
+  "weekEnd": "2026-09-20",
+  "revision": true,
+  "outputFile": "menus/weekly/2026-09-14.revised.txt",
   "sourceBoard": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php",
   "koreanSources": [
     {
@@ -54,43 +54,43 @@
   },
   "meals": [
     {
-      "date": "2026-09-21",
+      "date": "2026-09-14",
       "breakfast": "R1",
       "lunch": "R2",
       "dinner": "R3"
     },
     {
-      "date": "2026-09-22",
+      "date": "2026-09-15",
       "breakfast": "R4",
       "lunch": "R5",
       "dinner": "R6"
     },
     {
-      "date": "2026-09-23",
+      "date": "2026-09-16",
       "breakfast": "R7",
       "lunch": "R3",
       "dinner": "R8"
     },
     {
-      "date": "2026-09-24",
+      "date": "2026-09-17",
       "breakfast": "R1",
       "lunch": "R8",
       "dinner": "R2"
     },
     {
-      "date": "2026-09-25",
+      "date": "2026-09-18",
       "breakfast": "R4",
       "lunch": "R2",
       "dinner": "R5"
     },
     {
-      "date": "2026-09-26",
+      "date": "2026-09-19",
       "breakfast": "R7",
       "lunch": "R5",
       "dinner": "R3"
     },
     {
-      "date": "2026-09-27",
+      "date": "2026-09-20",
       "breakfast": "R1",
       "lunch": "R6",
       "dinner": "R8"
@@ -102,15 +102,15 @@
       "name": "소고기양파죽 (무염)",
       "usedDates": [
         {
-          "date": "2026-09-21",
+          "date": "2026-09-14",
           "meal": "아침"
         },
         {
-          "date": "2026-09-24",
+          "date": "2026-09-17",
           "meal": "아침"
         },
         {
-          "date": "2026-09-27",
+          "date": "2026-09-20",
           "meal": "아침"
         }
       ],
@@ -129,62 +129,62 @@
     },
     {
       "id": "R2",
-      "name": "달걀콩나물 진밥 (무염)",
+      "name": "달걀파프리카 진밥 (무염)",
       "usedDates": [
         {
-          "date": "2026-09-21",
+          "date": "2026-09-14",
           "meal": "점심"
         },
         {
-          "date": "2026-09-24",
+          "date": "2026-09-17",
           "meal": "저녁"
         },
         {
-          "date": "2026-09-25",
+          "date": "2026-09-18",
           "meal": "점심"
         }
       ],
       "source": {
-        "sourceDate": "2026-09-10",
+        "sourceDate": "2026-09-14",
         "meal": "중식",
-        "name": "달걀콩나물 진밥",
+        "name": "달걀파프리카 진밥",
         "posted": "2026-08-14",
         "postTitle": "2026년 9월 식단 및 레시피(이유식)",
         "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
         "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
-        "sheet": "2주",
-        "range": "A41:F45",
-        "dateCell": "A37"
+        "sheet": "3주",
+        "range": "A8:F12",
+        "dateCell": "A4"
       }
     },
     {
       "id": "R3",
-      "name": "닭고기 청경채진밥 (무염)",
+      "name": "닭고기 양배추진밥 (무염)",
       "usedDates": [
         {
-          "date": "2026-09-21",
+          "date": "2026-09-14",
           "meal": "저녁"
         },
         {
-          "date": "2026-09-23",
+          "date": "2026-09-16",
           "meal": "점심"
         },
         {
-          "date": "2026-09-26",
+          "date": "2026-09-19",
           "meal": "저녁"
         }
       ],
       "source": {
-        "sourceDate": "2026-09-04",
+        "sourceDate": "2026-09-21",
         "meal": "중식",
-        "name": "닭고기 청경채진밥",
+        "name": "닭고기 양배추진밥",
         "posted": "2026-08-14",
         "postTitle": "2026년 9월 식단 및 레시피(이유식)",
         "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
         "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
-        "sheet": "1주",
-        "range": "A55:F59",
-        "dateCell": "A51"
+        "sheet": "4주",
+        "range": "A8:F12",
+        "dateCell": "A4"
       }
     },
     {
@@ -192,11 +192,11 @@
       "name": "느타리버섯죽 (무염)",
       "usedDates": [
         {
-          "date": "2026-09-22",
+          "date": "2026-09-15",
           "meal": "아침"
         },
         {
-          "date": "2026-09-25",
+          "date": "2026-09-18",
           "meal": "아침"
         }
       ],
@@ -215,32 +215,32 @@
     },
     {
       "id": "R5",
-      "name": "두부배추진밥 (무염)",
+      "name": "두부 애호박진밥 (무염)",
       "usedDates": [
         {
-          "date": "2026-09-22",
+          "date": "2026-09-15",
           "meal": "점심"
         },
         {
-          "date": "2026-09-25",
+          "date": "2026-09-18",
           "meal": "저녁"
         },
         {
-          "date": "2026-09-26",
+          "date": "2026-09-19",
           "meal": "점심"
         }
       ],
       "source": {
-        "sourceDate": "2026-09-03",
+        "sourceDate": "2026-09-08",
         "meal": "중식",
-        "name": "두부배추진밥",
+        "name": "두부 애호박진밥",
         "posted": "2026-08-14",
         "postTitle": "2026년 9월 식단 및 레시피(이유식)",
         "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
         "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
-        "sheet": "1주",
-        "range": "A41:F45",
-        "dateCell": "A37"
+        "sheet": "2주",
+        "range": "A21:F25",
+        "dateCell": "A17"
       }
     },
     {
@@ -248,11 +248,11 @@
       "name": "순살임연수 가지진밥 (무염)",
       "usedDates": [
         {
-          "date": "2026-09-22",
+          "date": "2026-09-15",
           "meal": "저녁"
         },
         {
-          "date": "2026-09-27",
+          "date": "2026-09-20",
           "meal": "점심"
         }
       ],
@@ -274,11 +274,11 @@
       "name": "얼갈이죽 (무염)",
       "usedDates": [
         {
-          "date": "2026-09-23",
+          "date": "2026-09-16",
           "meal": "아침"
         },
         {
-          "date": "2026-09-26",
+          "date": "2026-09-19",
           "meal": "아침"
         }
       ],
@@ -300,15 +300,15 @@
       "name": "소고기느타리버섯진밥 (무염)",
       "usedDates": [
         {
-          "date": "2026-09-23",
+          "date": "2026-09-16",
           "meal": "저녁"
         },
         {
-          "date": "2026-09-24",
+          "date": "2026-09-17",
           "meal": "점심"
         },
         {
-          "date": "2026-09-27",
+          "date": "2026-09-20",
           "meal": "저녁"
         }
       ],

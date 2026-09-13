@@ -19,7 +19,11 @@
 - sources/eunpyeong/index.json과 recipes.ndjson은 검색 보조 자료다. 고른 메뉴의 원본 XLSX와 게시글을 다시 읽어 날짜·단위·재료·조리법을 확인한다. query_sources.py --read로 원본 셀을 열 수 있다. dateIssues가 있거나 sourceDate가 null인 행은 자동 선택에서 제외하고 날짜를 추측해 고치지 않는다. 자료 간 불일치는 기록한다.
 - 원문과 가정용 변경을 나눠 적는다. 양념 제거, 재료 교체, 생쌀에서 지은 밥으로 변경, 분량과 조리 방식 조정을 구체적으로 밝힌다. 오전간식 레시피를 아침으로 보완했다면 원래 구분을 밝힌다. 센터가 제공·검수한 공식 주간 식단이라고 표현하지 않는다.
 - 확인하지 않은 날짜·레시피·출처·영양 수치를 만들지 않는다. 홈페이지 전체를 학습·검증했다고 주장하지 않는다. 자료확인현황.md의 실제 범위를 확인하고 현재 보관본을 최신이라고 단정하지 않는다. 최신 자료 확인은 필요한 공개 글만 대상으로 하며 전체 수집을 매번 반복하지 않는다. 401/403/429가 나오면 요청을 중단하고 우회하지 않는다.
-- 건강·조리·보관은 NHS 12개월 이후 식사 https://www.nhs.uk/best-start-in-life/baby/weaning/what-to-feed-your-baby/over-12-months/ 와 유아 음식 보관 https://www.nhs.uk/baby/weaning-and-feeding/childrens-food-safety-and-hygiene/ 등 공공 원문을 참고한다. 센터 과거 안내의 의료·알레르기 지침을 현재 지침으로 무조건 적용하지 않는다.
+- 건강·월령·질감은 대한민국 질병관리청 국가건강정보포털 이유기보충식 https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470 와 대한소아청소년과학회 이유식 안내 https://www.pediatrics.or.kr/bbs/index.html?category=A&code=infantcare&gubun=D&key=&keyfield=&mode=view&number=8815&page=1 를 우선 참고한다. 12~23개월의 보충식 열량·횟수·질감 기준을 사용하되, 모유·분유 섭취량과 성장 상태에 따라 실제 필요량이 달라진다고 표시한다. 질병관리청은 평균적인 수유량을 전제로 이 시기 보충식 열량을 하루 약 550kcal, 3~4회로 설명하며 이를 처방량으로 단정하지 않는다.
+- 과섭취·부족 섭취를 평가할 때는 보건복지부·한국영양학회의 2025 한국인 영양소 섭취기준 https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=167 을 연령대 목표로 사용하고, 식재료 영양값은 농촌진흥청 국가표준식품성분표 안내 https://rda.go.kr/board/board.do?dataNo=100000800852&mode=view&prgId=day_farmprmninfoEntry 를 사용한다. 메뉴 제공량은 처방량이 아니며 실제 먹은 양·수유량·성장곡선을 함께 본다.
+- 개인의 과다·부족 섭취나 성장 문제는 질병관리청 소아청소년 성장도표 https://kdca.go.kr/kdca/5458/subview.do 의 월령·성별·키·체중 흐름과 함께 보고, 식단만으로 진단하지 않는다. 성장곡선 이탈, 반복적인 섭취 곤란, 구토·설사·알레르기 의심 증상이 있으면 소아청소년과 진료를 우선한다.
+- 알레르기 표시·유발물질과 조리·보관은 식품의약품안전처 식품안전나라 자료를 우선 참고한다: https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_grp=MENU_NEW01&menu_no=3120&ntctxt_no=1100304 및 https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_no=3120&ntctxt_no=1102681 . 제철 근거도 농림축산식품부·농촌진흥청·공공 급식지원센터 등 국내 원문을 우선 사용하고, 근거가 없는 식재료는 제철이라고 단정하지 않는다.
+- 해외 기관 자료는 국내 공식 자료에서 확인할 수 없는 항목의 보조 자료로만 사용하며 기본 발송 출처에는 넣지 않는다. 센터 과거 안내의 의료·알레르기 지침을 현재 지침으로 무조건 적용하지 않는다.
 
 발송 방법:
 작업 폴더 C:\Users\rhj27\OneDrive\Desktop\Codex file\아기식단_텔레그램 의 README.md와 telegram.mjs를 사용한다. 사용자 최종 수신 방식은 텔레그램이며 다른 수신자나 이메일·카카오톡으로 발송하지 않는다. 주간 전체 발송은 사용자가 요청했으므로 매주 재승인을 받지 않는다.

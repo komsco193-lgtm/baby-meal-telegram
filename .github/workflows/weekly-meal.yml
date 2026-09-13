@@ -20,6 +20,11 @@ on:
         required: false
         default: false
         type: boolean
+      revision:
+        description: '기존 주간본의 수정본을 별도 발송(원본 발송 기록 유지)'
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: baby-meal-weekly
@@ -35,6 +40,7 @@ jobs:
       WEEK_START: ${{ inputs.week_start }}
       RUN_SEND: ${{ github.event_name == 'schedule' || inputs.send == true }}
       RUN_SUMMARY: ${{ inputs.summary == true }}
+      RUN_REVISION: ${{ inputs.revision == true }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
     steps:
@@ -48,13 +54,17 @@ jobs:
         with:
           node-version: 24
 
-      - name: 다음 주 식단 생성 또는 기존 검증본 유지
+      - name: 식단 생성 또는 기존 검증본 유지
         id: plan
         run: node scripts/generate_weekly.mjs
 
-      - name: 텔레그램 발송
-        if: env.RUN_SEND == 'true' && env.RUN_SUMMARY != 'true'
-        run: node scripts/cloud_sender.mjs "menus/weekly/${{ steps.plan.outputs.week_start }}.txt" "week-${{ steps.plan.outputs.week_start }}"
+      - name: 텔레그램 수정본 발송
+        if: env.RUN_SEND == 'true' && env.RUN_REVISION == 'true'
+        run: node scripts/cloud_sender.mjs "${{ steps.plan.outputs.menu_file }}" "week-${{ steps.plan.outputs.week_start }}-revised"
+
+      - name: 텔레그램 주간본 발송
+        if: env.RUN_SEND == 'true' && env.RUN_SUMMARY != 'true' && env.RUN_REVISION != 'true'
+        run: node scripts/cloud_sender.mjs "${{ steps.plan.outputs.menu_file }}" "week-${{ steps.plan.outputs.week_start }}"
 
       - name: 표 요약 추가 발송
         if: env.RUN_SUMMARY == 'true'

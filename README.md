@@ -45,6 +45,7 @@ Node 실행 경로: `C:\Users\rhj27\.cache\codex-runtimes\codex-primary-runtime\
 - 메뉴를 선택하면 원본 셀의 날짜·요일·분량을 대조하고 게시글의 작성일을 확인합니다. `dateIssues`가 있거나 `sourceDate`가 null인 행은 자동 선택에서 제외합니다. 잘못 적힌 날짜를 추측해 수정하지 않습니다.
 - 실제 날짜 오류 예: `4060/2026년 9월 완료기 이유식 레시피.xlsx`의 ‘1주’ A26은 `21 (수)`, ‘2주’ A68은 `18 (토)`로 적혀 달력과 맞지 않습니다. 한글 식단에는 각각 다른 일자로 배열되어 있어 자료 간 불일치도 있습니다. 이 행은 첫 식단에서 제외했습니다.
 - 각 식단의 `menus/YYYY-MM-DD.sources.json`에 원문 식별 정보·대조 결과·변경 내용을 기록합니다. 원문에서 소금·소스 제거, 분량·재료·조리법 변경은 모두 ‘가정용 변경’으로 밝힙니다. 오전간식에서 아침 한 끼로 바꾼 경우도 표시합니다.
+- 발송문에는 대한민국 기준 참고 출처를 함께 표시합니다. 월령·질감은 [질병관리청 국가건강정보포털](https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470)과 [대한소아청소년과학회](https://www.pediatrics.or.kr/bbs/index.html?category=A&code=infantcare&gubun=D&key=&keyfield=&mode=view&number=8815&page=1), 영양 목표는 [2025 한국인 영양소 섭취기준](https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=167), 식재료 영양값은 [농촌진흥청 국가표준식품성분표](https://rda.go.kr/board/board.do?dataNo=100000800852&mode=view&prgId=day_farmprmninfoEntry), 성장곡선은 [질병관리청 소아청소년 성장도표](https://kdca.go.kr/kdca/5458/subview.do), 알레르기·조리·보관은 [식품안전나라](https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_grp=MENU_NEW01&menu_no=3120&ntctxt_no=1100304) 자료를 우선 사용합니다. 메뉴 제공량은 처방량이 아니며, 실제 먹은 양·수유량·성장 상태를 함께 확인합니다.
 - 자료 수집·텍스트 추출·개별 메뉴 검증은 서로 다릅니다. 현재 범위와 한계는 `자료확인현황.md`를 확인합니다. 홈페이지 전체 학습이나 의학적 검수를 마쳤다고 주장하지 않습니다. 센터의 과거 식단 안내를 현재 의료 지침으로 그대로 일반화하지 않습니다.
 
 ## 자료 도구

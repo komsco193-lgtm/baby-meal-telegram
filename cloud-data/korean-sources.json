@@ -1,0 +1,37 @@
+[
+  {
+    "name": "질병관리청 국가건강정보포털 · 이유기보충식(이유식)",
+    "purpose": "월령별 식사 횟수와 질감, 12개월 이후 가족 음식으로의 전환 참고",
+    "url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470"
+  },
+  {
+    "name": "대한소아청소년과학회 · 이유식의 시작",
+    "purpose": "소아청소년과 전문학회가 안내하는 이유식 시작·수유 관련 참고",
+    "url": "https://www.pediatrics.or.kr/bbs/index.html?category=A&code=infantcare&gubun=D&key=&keyfield=&mode=view&number=8815&page=1"
+  },
+  {
+    "name": "식품의약품안전처 식품안전나라 · 식품 알레르기",
+    "purpose": "알레르기 유발물질, 제품 표시 확인, 증상 발생 시 대처 참고",
+    "url": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_grp=MENU_NEW01&menu_no=3120&ntctxt_no=1100304"
+  },
+  {
+    "name": "식품의약품안전처 식품안전나라 · 조리·보관",
+    "purpose": "손 씻기, 충분한 가열, 냉장·냉동과 조리식품 보관 참고",
+    "url": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_no=3120&ntctxt_no=1102681"
+  },
+  {
+    "name": "한국영양학회 · 2025 한국인 영양소 섭취기준",
+    "purpose": "연령별 에너지·영양소 목표를 확인하는 국내 기준",
+    "url": "https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=167"
+  },
+  {
+    "name": "질병관리청 · 소아청소년 성장도표",
+    "purpose": "과다·부족 섭취를 실제 성장 상태와 함께 판단할 때 참고",
+    "url": "https://kdca.go.kr/kdca/5458/subview.do"
+  },
+  {
+    "name": "농촌진흥청 · 국가표준식품성분표 안내",
+    "purpose": "식재료의 에너지와 영양소를 계산할 때 사용하는 국내 성분 데이터",
+    "url": "https://rda.go.kr/board/board.do?dataNo=100000800852&mode=view&prgId=day_farmprmninfoEntry"
+  }
+]
