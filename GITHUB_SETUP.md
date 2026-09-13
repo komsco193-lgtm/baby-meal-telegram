@@ -8,8 +8,10 @@ GitHub에서 **Private repository**를 만들고 이 폴더를 연결합니다. 
 
 이 폴더에서 처음 한 번만 실행합니다.
 
+현재 작업 폴더에는 `origin`이 이미 사용자 저장소 주소로 등록되어 있습니다.
+
 ```powershell
-git remote add origin https://github.com/<GitHub사용자명>/baby-meal-telegram.git
+cd "C:\Users\rhj27\OneDrive\Desktop\Codex file\아기식단_텔레그램"
 git push -u origin main
 ```
 
@@ -23,6 +25,8 @@ git push -u origin main
 - `TELEGRAM_CHAT_ID`: 연결한 개인 채팅방 ID
 
 토큰은 이 대화에 보내지 말고 GitHub 입력창에만 붙여넣습니다. 채팅방 ID는 기존 연결 PC에서 봇 연결에 사용한 개인 채팅방의 숫자 ID를 확인해 입력합니다.
+
+채팅방 ID만 확인할 때는 이 폴더에서 `node telegram.mjs chat-id`를 실행합니다. 숫자만 출력되며 봇 토큰은 출력하지 않습니다.
 
 ## 3. 첫 주 발송
 
