@@ -32,6 +32,8 @@ git push -u origin main
 
 **Actions → 아기 주간 식단 텔레그램 → Run workflow**에서 `week_start`에 `2026-09-14`를 입력하고 `send`를 켠 뒤 실행합니다. 기존에 검증한 첫 주 파일을 그대로 보내며, 이미 보낸 주는 `cloud-state/receipts.json`으로 중복을 막습니다.
 
+이미 보낸 주의 표만 다시 받고 싶으면 `week_start`에 해당 월요일을 입력하고 `summary`를 켭니다. 이때는 `summary-YYYY-MM-DD`라는 별도 키를 사용해 주간 합본과 중복되지 않습니다.
+
 ## 4. 이후 자동 실행
 
 수요일 20:00(한국시간)에 다음 주 식단을 생성하고 발송합니다. `schedule`은 UTC 기준으로 `0 11 * * 3`에 설정되어 있습니다. 수동으로 식단만 만들 때는 `send`를 끄면 됩니다.

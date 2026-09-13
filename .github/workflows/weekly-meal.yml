@@ -15,6 +15,11 @@ on:
         required: false
         default: true
         type: boolean
+      summary:
+        description: '표 요약만 추가 발송(기존 주간본 중복 방지)'
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: baby-meal-weekly
@@ -29,6 +34,7 @@ jobs:
     env:
       WEEK_START: ${{ inputs.week_start }}
       RUN_SEND: ${{ github.event_name == 'schedule' || inputs.send == true }}
+      RUN_SUMMARY: ${{ inputs.summary == true }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
     steps:
@@ -47,8 +53,12 @@ jobs:
         run: node scripts/generate_weekly.mjs
 
       - name: 텔레그램 발송
-        if: env.RUN_SEND == 'true'
+        if: env.RUN_SEND == 'true' && env.RUN_SUMMARY != 'true'
         run: node scripts/cloud_sender.mjs "menus/weekly/${{ steps.plan.outputs.week_start }}.txt" "week-${{ steps.plan.outputs.week_start }}"
+
+      - name: 표 요약 추가 발송
+        if: env.RUN_SUMMARY == 'true'
+        run: node scripts/cloud_sender.mjs "menus/weekly/${{ steps.plan.outputs.week_start }}.summary.txt" "summary-${{ steps.plan.outputs.week_start }}"
 
       - name: 식단·발송 기록 저장
         if: always()
