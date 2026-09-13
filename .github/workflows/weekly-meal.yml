@@ -33,14 +33,14 @@ jobs:
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
     steps:
       - name: 저장소 가져오기
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           persist-credentials: true
 
       - name: Node.js 준비
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 24
 
       - name: 다음 주 식단 생성 또는 기존 검증본 유지
         id: plan

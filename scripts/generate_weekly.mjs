@@ -276,9 +276,10 @@ function render(plan, weekStart) {
   lines.push('재료 기준: 밥은 조리 후 무게로 환산한 근사치, 고기·생선·채소·두부는 손질 후 조리 전, 달걀은 껍질 제외입니다. 보유량은 확인 전이므로 부족하면 보충합니다.');
   lines.push('');
   lines.push('주간표');
+  lines.push('| 날짜 | 아침 | 점심 | 저녁 |');
+  lines.push('|---|---|---|---|');
   for (const row of plan.menuRows) {
-    const day = `${koreanDate(row.date)} 아침 ${recipeMap.get(row.breakfast).name} / 점심 ${recipeMap.get(row.lunch).name} / 저녁 ${recipeMap.get(row.dinner).name}`;
-    lines.push(day);
+    lines.push(`| ${koreanDate(row.date)} | ${recipeMap.get(row.breakfast).name} | ${recipeMap.get(row.lunch).name} | ${recipeMap.get(row.dinner).name} |`);
   }
   lines.push('');
   lines.push('모든 끼니 공통');
@@ -322,7 +323,12 @@ const month = start.getUTCMonth() + 1;
 const year = start.getUTCFullYear();
 const existing = path.join(MENU_DIR, `${weekStart}.txt`);
 fs.mkdirSync(MENU_DIR, { recursive: true });
-if (fs.existsSync(existing) && fs.statSync(existing).size > 0) {
+const existingText = fs.existsSync(existing) ? fs.readFileSync(existing, 'utf8') : '';
+// Keep the already sent first week unchanged. Future legacy previews are
+// regenerated once so they receive the clearer table layout.
+const keepExisting = fs.existsSync(existing) && fs.statSync(existing).size > 0 &&
+  (weekStart === '2026-09-14' || existingText.includes('| 날짜 | 아침 |'));
+if (keepExisting) {
   console.log(`기존 검증 식단을 유지합니다: ${existing}`);
 } else {
   const seasonal = fs.existsSync(SEASONAL) ? JSON.parse(fs.readFileSync(SEASONAL, 'utf8')) : {};
