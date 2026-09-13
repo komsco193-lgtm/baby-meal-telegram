@@ -1,0 +1,54 @@
+{
+  "weekStart": "2026-09-14",
+  "weekEnd": "2026-09-20",
+  "deliveryMode": "telegram_weekly",
+  "sourceBoard": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php",
+  "sourceSelection": "weekly/2026-09-14.source-selection.json",
+  "seasonalSource": {
+    "month": 9,
+    "ingredients": ["고구마", "느타리버섯"],
+    "title": "해남군 어린이·사회복지급식관리지원센터 2025년 9월 식단 안내",
+    "page": 3,
+    "url": "https://info.childcare.go.kr/info/pnis/search/PnisFileDownload.jsp?STCODE=46820000004&flag=DNLL&wkyymm=202509"
+  },
+  "meals": {
+    "2026-09-14": ["R1", "R2", "R3"],
+    "2026-09-15": ["R4", "R5", "R8"],
+    "2026-09-16": ["R1", "R6", "R3"],
+    "2026-09-17": ["R9", "R7", "R2"],
+    "2026-09-18": ["R6", "R2", "R5"],
+    "2026-09-19": ["R1", "R5", "R3"],
+    "2026-09-20": ["R8", "R6", "R7"]
+  },
+  "recipeSourceIds": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9"],
+  "ingredientTotals": {
+    "cooked_rice_g": 1440,
+    "beef_g": 100,
+    "pork_tenderloin_g": 84,
+    "boneless_flounder_g": 60,
+    "tofu_g": 100,
+    "egg_without_shell_g": 40,
+    "oyster_mushroom_g": 90,
+    "onion_g": 160,
+    "carrot_g": 145,
+    "zucchini_g": 100,
+    "cabbage_g": 45,
+    "sweet_potato_g": 105,
+    "pasteurized_milk_ml": 150,
+    "plain_yogurt_g": 120,
+    "cooking_oil_g": 6,
+    "water_ml": 1200
+  },
+  "recipeSources": [
+    {"id":"R1","sourceDate":"2025-09-15","meal":"오전간식→가정용 아침","name":"고구마죽","posted":"2025-08-14","postTitle":"2025년 9월 식단 및 레시피(이유식)","filename":"2025년 9월 완료기 이유식 레시피.xlsx","sheet":"3주","range":"A4:F7","dateCell":"A4","homeAdaptation":"지은 밥·고구마 증량, 애호박 제외, 우유·요거트 추가"},
+    {"id":"R2","sourceDate":"2026-09-23","meal":"중식/가정용 저녁 반복","name":"소고기느타리버섯진밥","posted":"2026-08-14","postTitle":"2026년 9월 식단 및 레시피(이유식)","filename":"2026년 9월 완료기 이유식 레시피.xlsx","sheet":"4주","range":"A40:F44","dateCell":"A38","homeAdaptation":"생쌀→지은 밥, 양파·당근 증량, 다진 고기를 냄비에서 익힘"},
+    {"id":"R3","sourceDate":"2026-09-09","meal":"저녁","name":"돼지고기 양파구이","posted":"2026-08-14","postTitle":"2026년 9월 식단 및 레시피(1-2세)","filename":"2026년 9월 1-2세 저녁식단 레시피.xlsx","sheet":"2주","range":"A58:H62","dateCell":"A48","homeAdaptation":"소금·후추 제외, 안심 사용, 양파·채소·밥 추가, 촉촉한 조리"},
+    {"id":"R4","sourceDate":"2025-09-15","meal":"중식","name":"달걀버섯진밥","posted":"2025-08-14","postTitle":"2025년 9월 식단 및 레시피(이유식)","filename":"2025년 9월 완료기 이유식 레시피.xlsx","sheet":"3주","range":"A8:F12","dateCell":"A4","homeAdaptation":"생쌀→지은 밥, 채소량 조정, 무염 조리"},
+    {"id":"R5","sourceDate":"2025-09-25","meal":"중식","name":"순살가자미양배추진밥","posted":"2025-08-14","postTitle":"2025년 9월 식단 및 레시피(이유식)","filename":"2025년 9월 완료기 이유식 레시피.xlsx","sheet":"4주","range":"A47:F51","dateCell":"A43","homeAdaptation":"생쌀→지은 밥, 양배추·애호박량 조정, 무염 가자미만 사용"},
+    {"id":"R6","sourceDate":"2026-09-19","meal":"중식","name":"두부당근 진밥","posted":"2026-08-14","postTitle":"2026년 9월 식단 및 레시피(이유식)","filename":"2026년 9월 완료기 이유식 레시피.xlsx","sheet":"3주","range":"A77:F81","dateCell":"A75","homeAdaptation":"생쌀→지은 밥, 양파·애호박량 조정, 무가염 두부 사용"},
+    {"id":"R7","sourceDate":"2026-07-28","meal":"중식","name":"소고기청경채 진밥","posted":"2026-06-15","postTitle":"2026년 7월 식단 및 레시피(이유식)","filename":"2026년 7월 완료기 이유식 레시피.xlsx","sheet":"5주","range":"A19:F23","dateCell":"A15","homeAdaptation":"청경채→애호박으로 대체, 생쌀→지은 밥, 무염 조리"},
+    {"id":"R8","sourceDate":"2026-08-05","meal":"중식","name":"두부 느타리버섯 진밥","posted":"2026-07-15","postTitle":"2026년 8월 식단 및 레시피(이유식)","filename":"2026년 8월 완료기 이유식 레시피.xlsx","sheet":"2주","range":"A40:F44","dateCell":"A36","homeAdaptation":"생쌀→지은 밥, 무가염 두부와 무염 조리"},
+    {"id":"R9","sourceDate":"2025-09-29","meal":"중식","name":"달걀고구마진밥","posted":"2025-08-14","postTitle":"2025년 9월 식단 및 레시피(이유식)","filename":"2025년 9월 완료기 이유식 레시피.xlsx","sheet":"5주","range":"A8:F12","dateCell":"A4","homeAdaptation":"생쌀→지은 밥, 고구마·당근·애호박량 조정"}
+  ],
+  "verification": "선택한 9개 원본 XLSX, 게시글 작성일, 원문 날짜·요일·재료·조리방법을 직접 대조했다. 원문과 제공 날짜는 다를 수 있으며, 모든 조리법은 가정용 무염 변경을 표시했다. 센터 공식 주간 식단이나 홈페이지 전체 검증으로 표현하지 않는다."
+}

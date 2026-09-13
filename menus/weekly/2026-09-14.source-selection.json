@@ -1,0 +1,803 @@
+[
+  {
+    "id": "R1",
+    "source": {
+      "postId": "3047",
+      "postTitle": "2025년 9월 식단 및 레시피(이유식)",
+      "posted": "2025-08-14",
+      "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3047&table_id=table_1670337543",
+      "file": "3047\\2025년 9월 완료기 이유식 레시피.xlsx",
+      "filename": "2025년 9월 완료기 이유식 레시피.xlsx",
+      "sheet": "3주",
+      "startRow": 4,
+      "sourceDate": "2025-09-15",
+      "dateLabel": "15\n(월)",
+      "dateCell": "A4",
+      "sourceDateCandidate": "2025-09-15",
+      "dateIssues": [],
+      "sourceSha256": "464d53e62b5d5b3367ee2ed71578e52fe129d3c8023c9b29ef723d0e7036b90c",
+      "amountHeader": "식재료량(g)",
+      "verification": "추출 색인: 원문 재열람 전, 날짜 오류 행은 자동 사용 제외",
+      "meal": "오전간식",
+      "name": "고구마죽",
+      "ingredients": [
+        {
+          "name": "쌀",
+          "grams": 14,
+          "cell": "E4"
+        },
+        {
+          "name": "고구마",
+          "grams": 10,
+          "cell": "E5"
+        },
+        {
+          "name": "당근",
+          "grams": 5,
+          "cell": "E6"
+        },
+        {
+          "name": "애호박",
+          "grams": 5,
+          "cell": "E7"
+        }
+      ],
+      "method": [
+        "① 쌀은 불린 후 블렌더에 넣어 반쯤 으깨지도록 간다.\n② 고구마와 당근, 애호박은 0.5cm 크기로 다진다.\n③ 냄비에 ①과 물 140g을 넣고 끓인다.\n④ ③이 끓어 오르면 ②를 넣고 숟가락을 기울여 똑똑 떨어지는 점도가 될 때까지 끓인다."
+      ],
+      "endRow": 7,
+      "range": "A4:F7"
+    },
+    "originalCells": [
+      {
+        "A4": "15\n(월)",
+        "B4": "오전간식",
+        "C4": "고구마죽",
+        "D4": "쌀",
+        "E4": 14,
+        "F4": "① 쌀은 불린 후 블렌더에 넣어 반쯤 으깨지도록 간다.\n② 고구마와 당근, 애호박은 0.5cm 크기로 다진다.\n③ 냄비에 ①과 물 140g을 넣고 끓인다.\n④ ③이 끓어 오르면 ②를 넣고 숟가락을 기울여 똑똑 떨어지는 점도가 될 때까지 끓인다."
+      },
+      {
+        "D5": "고구마",
+        "E5": 10
+      },
+      {
+        "D6": "당근",
+        "E6": 5
+      },
+      {
+        "D7": "애호박",
+        "E7": 5
+      }
+    ],
+    "originalDateCell": {
+      "A4": "15\n(월)"
+    },
+    "checks": {
+      "sha256": true,
+      "postDate": true,
+      "dateAndWeekday": true
+    }
+  },
+  {
+    "id": "R2",
+    "source": {
+      "postId": "4060",
+      "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+      "posted": "2026-08-14",
+      "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+      "file": "4060\\2026년 9월 완료기 이유식 레시피.xlsx",
+      "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+      "sheet": "4주",
+      "startRow": 40,
+      "sourceDate": "2026-09-23",
+      "dateLabel": "23\n(수)",
+      "dateCell": "A38",
+      "sourceDateCandidate": "2026-09-23",
+      "dateIssues": [],
+      "sourceSha256": "23505d2d6f30fcfe88794ba5b238ea6d28623ceb7abbcf82110d048ddec08e31",
+      "amountHeader": "식재료량(g)",
+      "verification": "추출 색인: 원문 재열람 전, 날짜 오류 행은 자동 사용 제외",
+      "meal": "중식",
+      "name": "소고기느타리버섯진밥",
+      "ingredients": [
+        {
+          "name": "쌀",
+          "grams": 28,
+          "cell": "E40"
+        },
+        {
+          "name": "소고기",
+          "grams": 20,
+          "cell": "E41"
+        },
+        {
+          "name": "느타리버섯",
+          "grams": 10,
+          "cell": "E42"
+        },
+        {
+          "name": "양파",
+          "grams": 5,
+          "cell": "E43"
+        },
+        {
+          "name": "당근",
+          "grams": 5,
+          "cell": "E44"
+        }
+      ],
+      "method": [
+        "① 쌀은 불린다.\n② 소고기는 삶아 가늘게 찢어 0.7cm 정도 크기로 다진다. \n③ 느타리버섯과 양파, 당근은 0.7cm 정도의 크기로 잘게 다진다. \n④ 냄비에 ①과 물 80g을 넣고 끓인다.\n⑤ ④이 끓어 오르면 약불로 줄이고 ②, ③을 넣어 눌어\n붙지 않게 잘 저어가며 끓인다."
+      ],
+      "endRow": 44,
+      "range": "A40:F44"
+    },
+    "originalCells": [
+      {
+        "B40": "중식",
+        "C40": "소고기느타리버섯진밥",
+        "D40": "쌀",
+        "E40": 28,
+        "F40": "① 쌀은 불린다.\n② 소고기는 삶아 가늘게 찢어 0.7cm 정도 크기로 다진다. \n③ 느타리버섯과 양파, 당근은 0.7cm 정도의 크기로 잘게 다진다. \n④ 냄비에 ①과 물 80g을 넣고 끓인다.\n⑤ ④이 끓어 오르면 약불로 줄이고 ②, ③을 넣어 눌어\n붙지 않게 잘 저어가며 끓인다."
+      },
+      {
+        "D41": "소고기",
+        "E41": 20
+      },
+      {
+        "D42": "느타리버섯",
+        "E42": 10
+      },
+      {
+        "D43": "양파",
+        "E43": 5
+      },
+      {
+        "D44": "당근",
+        "E44": 5
+      }
+    ],
+    "originalDateCell": {
+      "A38": "23\n(수)"
+    },
+    "checks": {
+      "sha256": true,
+      "postDate": true,
+      "dateAndWeekday": true
+    }
+  },
+  {
+    "id": "R3",
+    "source": {
+      "postId": "4061",
+      "postTitle": "2026년 9월 식단 및 레시피(1-2세)",
+      "posted": "2026-08-14",
+      "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4061&table_id=table_1670337543",
+      "file": "4061\\2026년 9월 1-2세 저녁식단 레시피.xlsx",
+      "filename": "2026년 9월 1-2세 저녁식단 레시피.xlsx",
+      "sheet": "2주",
+      "startRow": 58,
+      "sourceDate": "2026-09-09",
+      "dateLabel": "9\n(수)",
+      "dateCell": "A48",
+      "sourceDateCandidate": "2026-09-09",
+      "dateIssues": [],
+      "sourceSha256": "e64dc8a5037c7b776ae0c1aa174f27eb8388e03a67007154a82c3e80e6327dba",
+      "amountHeader": "1-2세(g)",
+      "verification": "추출 색인: 원문 재열람 전, 날짜 오류 행은 자동 사용 제외",
+      "meal": "저녁",
+      "name": "돼지고기 양파구이",
+      "ingredients": [
+        {
+          "name": "돼지고기, 생것",
+          "grams": 28,
+          "cell": "E58"
+        },
+        {
+          "name": "양파, 생것",
+          "grams": 10.5,
+          "cell": "E59"
+        },
+        {
+          "name": "콩기름",
+          "grams": 2.1,
+          "cell": "E60"
+        },
+        {
+          "name": "소금",
+          "grams": 0.14,
+          "cell": "E61"
+        },
+        {
+          "name": "후추, 검은후추, 가루",
+          "grams": 0.07,
+          "cell": "E62"
+        }
+      ],
+      "method": [
+        "① 돼지고기는 적당한 크기로 썰고 칼집을 낸 후, 소금, 후춧가루",
+        "로 밑간한다.",
+        "② 양파는 한입 크기로 썬다.",
+        "③ 팬에 콩기름을 두르고 ①을 올려 앞뒤로 양파와 함께 노릇하게",
+        "굽는다."
+      ],
+      "endRow": 62,
+      "range": "A58:H62"
+    },
+    "originalCells": [
+      {
+        "C58": "돼지고기\n양파구이",
+        "D58": "돼지고기, 생것",
+        "E58": 28,
+        "F58": 40,
+        "G58": 0,
+        "H58": "① 돼지고기는 적당한 크기로 썰고 칼집을 낸 후, 소금, 후춧가루"
+      },
+      {
+        "D59": "양파, 생것",
+        "E59": 10.5,
+        "F59": 15,
+        "G59": 0,
+        "H59": " 로 밑간한다."
+      },
+      {
+        "D60": "콩기름",
+        "E60": 2.0999999999999996,
+        "F60": 3,
+        "G60": 0,
+        "H60": "② 양파는 한입 크기로 썬다."
+      },
+      {
+        "D61": "소금",
+        "E61": 0.13999999999999999,
+        "F61": 0.2,
+        "G61": 0,
+        "H61": "③ 팬에 콩기름을 두르고 ①을 올려 앞뒤로 양파와 함께 노릇하게"
+      },
+      {
+        "D62": "후추, 검은후추, 가루",
+        "E62": 0.06999999999999999,
+        "F62": 0.1,
+        "G62": 0,
+        "H62": " 굽는다."
+      }
+    ],
+    "originalDateCell": {
+      "A48": "9\n(수)"
+    },
+    "checks": {
+      "sha256": true,
+      "postDate": true,
+      "dateAndWeekday": true
+    }
+  },
+  {
+    "id": "R4",
+    "source": {
+      "postId": "3047",
+      "postTitle": "2025년 9월 식단 및 레시피(이유식)",
+      "posted": "2025-08-14",
+      "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3047&table_id=table_1670337543",
+      "file": "3047\\2025년 9월 완료기 이유식 레시피.xlsx",
+      "filename": "2025년 9월 완료기 이유식 레시피.xlsx",
+      "sheet": "3주",
+      "startRow": 8,
+      "sourceDate": "2025-09-15",
+      "dateLabel": "15\n(월)",
+      "dateCell": "A4",
+      "sourceDateCandidate": "2025-09-15",
+      "dateIssues": [],
+      "sourceSha256": "464d53e62b5d5b3367ee2ed71578e52fe129d3c8023c9b29ef723d0e7036b90c",
+      "amountHeader": "식재료량(g)",
+      "verification": "추출 색인: 원문 재열람 전, 날짜 오류 행은 자동 사용 제외",
+      "meal": "중식",
+      "name": "달걀버섯진밥",
+      "ingredients": [
+        {
+          "name": "쌀",
+          "grams": 28,
+          "cell": "E8"
+        },
+        {
+          "name": "달걀",
+          "grams": 20,
+          "cell": "E9"
+        },
+        {
+          "name": "느타리버섯",
+          "grams": 10,
+          "cell": "E10"
+        },
+        {
+          "name": "당근",
+          "grams": 5,
+          "cell": "E11"
+        },
+        {
+          "name": "애호박",
+          "grams": 5,
+          "cell": "E12"
+        }
+      ],
+      "method": [
+        "① 쌀은 불린다.\n② 그릇에 달걀을 풀고 느타리버섯과 당근, 애호박은 0.7cm 정도의 크기로 잘게 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      ],
+      "endRow": 12,
+      "range": "A8:F12"
+    },
+    "originalCells": [
+      {
+        "B8": "중식",
+        "C8": "달걀버섯진밥",
+        "D8": "쌀",
+        "E8": 28,
+        "F8": "① 쌀은 불린다.\n② 그릇에 달걀을 풀고 느타리버섯과 당근, 애호박은 0.7cm 정도의 크기로 잘게 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      },
+      {
+        "D9": "달걀",
+        "E9": 20
+      },
+      {
+        "D10": "느타리버섯",
+        "E10": 10
+      },
+      {
+        "D11": "당근",
+        "E11": 5
+      },
+      {
+        "D12": "애호박",
+        "E12": 5
+      }
+    ],
+    "originalDateCell": {
+      "A4": "15\n(월)"
+    },
+    "checks": {
+      "sha256": true,
+      "postDate": true,
+      "dateAndWeekday": true
+    }
+  },
+  {
+    "id": "R5",
+    "source": {
+      "postId": "3047",
+      "postTitle": "2025년 9월 식단 및 레시피(이유식)",
+      "posted": "2025-08-14",
+      "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3047&table_id=table_1670337543",
+      "file": "3047\\2025년 9월 완료기 이유식 레시피.xlsx",
+      "filename": "2025년 9월 완료기 이유식 레시피.xlsx",
+      "sheet": "4주",
+      "startRow": 47,
+      "sourceDate": "2025-09-25",
+      "dateLabel": "25\n(목)",
+      "dateCell": "A43",
+      "sourceDateCandidate": "2025-09-25",
+      "dateIssues": [],
+      "sourceSha256": "464d53e62b5d5b3367ee2ed71578e52fe129d3c8023c9b29ef723d0e7036b90c",
+      "amountHeader": "식재료량(g)",
+      "verification": "추출 색인: 원문 재열람 전, 날짜 오류 행은 자동 사용 제외",
+      "meal": "중식",
+      "name": "순살가자미양배추진밥",
+      "ingredients": [
+        {
+          "name": "쌀",
+          "grams": 28,
+          "cell": "E47"
+        },
+        {
+          "name": "가자미",
+          "grams": 20,
+          "cell": "E48"
+        },
+        {
+          "name": "양배추",
+          "grams": 10,
+          "cell": "E49"
+        },
+        {
+          "name": "애호박",
+          "grams": 5,
+          "cell": "E50"
+        },
+        {
+          "name": "당근",
+          "grams": 5,
+          "cell": "E51"
+        }
+      ],
+      "method": [
+        "① 쌀은 불린다.\n② 가자미는 손질해 찜통에 찐 후 살만 발라 잘게 부수고, 양배추와 애호박, 당근은 0.7cm 정도의 크기로 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      ],
+      "endRow": 51,
+      "range": "A47:F51"
+    },
+    "originalCells": [
+      {
+        "B47": "중식",
+        "C47": "순살가자미양배추진밥",
+        "D47": "쌀",
+        "E47": 28,
+        "F47": "① 쌀은 불린다.\n② 가자미는 손질해 찜통에 찐 후 살만 발라 잘게 부수고, 양배추와 애호박, 당근은 0.7cm 정도의 크기로 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      },
+      {
+        "D48": "가자미",
+        "E48": 20
+      },
+      {
+        "D49": "양배추",
+        "E49": 10
+      },
+      {
+        "D50": "애호박",
+        "E50": 5
+      },
+      {
+        "D51": "당근",
+        "E51": 5
+      }
+    ],
+    "originalDateCell": {
+      "A43": "25\n(목)"
+    },
+    "checks": {
+      "sha256": true,
+      "postDate": true,
+      "dateAndWeekday": true
+    }
+  },
+  {
+    "id": "R6",
+    "source": {
+      "postId": "4060",
+      "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+      "posted": "2026-08-14",
+      "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+      "file": "4060\\2026년 9월 완료기 이유식 레시피.xlsx",
+      "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+      "sheet": "3주",
+      "startRow": 77,
+      "sourceDate": "2026-09-19",
+      "dateLabel": "19\n(토)",
+      "dateCell": "A75",
+      "sourceDateCandidate": "2026-09-19",
+      "dateIssues": [],
+      "sourceSha256": "23505d2d6f30fcfe88794ba5b238ea6d28623ceb7abbcf82110d048ddec08e31",
+      "amountHeader": "식재료량(g)",
+      "verification": "추출 색인: 원문 재열람 전, 날짜 오류 행은 자동 사용 제외",
+      "meal": "중식",
+      "name": "두부당근 진밥",
+      "ingredients": [
+        {
+          "name": "쌀",
+          "grams": 28,
+          "cell": "E77"
+        },
+        {
+          "name": "두부",
+          "grams": 20,
+          "cell": "E78"
+        },
+        {
+          "name": "당근",
+          "grams": 10,
+          "cell": "E79"
+        },
+        {
+          "name": "양파",
+          "grams": 5,
+          "cell": "E80"
+        },
+        {
+          "name": "애호박",
+          "grams": 5,
+          "cell": "E81"
+        }
+      ],
+      "method": [
+        "① 쌀은 불린다.\n② 두부는 으깨고 당근과 양파, 애호박은 0.7cm 정도의 크기로 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      ],
+      "endRow": 81,
+      "range": "A77:F81"
+    },
+    "originalCells": [
+      {
+        "B77": "중식",
+        "C77": "두부당근\n진밥",
+        "D77": "쌀",
+        "E77": 28,
+        "F77": "① 쌀은 불린다.\n② 두부는 으깨고 당근과 양파, 애호박은 0.7cm 정도의 크기로 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      },
+      {
+        "D78": "두부",
+        "E78": 20
+      },
+      {
+        "D79": "당근",
+        "E79": 10
+      },
+      {
+        "D80": "양파",
+        "E80": 5
+      },
+      {
+        "D81": "애호박",
+        "E81": 5
+      }
+    ],
+    "originalDateCell": {
+      "A75": "19\n(토)"
+    },
+    "checks": {
+      "sha256": true,
+      "postDate": true,
+      "dateAndWeekday": true
+    }
+  },
+  {
+    "id": "R7",
+    "source": {
+      "postId": "3808",
+      "postTitle": "2026년 7월 식단 및 레시피(이유식)",
+      "posted": "2026-06-15",
+      "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3808&table_id=table_1670337543",
+      "file": "3808\\2026년 7월 완료기 이유식 레시피.xlsx",
+      "filename": "2026년 7월 완료기 이유식 레시피.xlsx",
+      "sheet": "5주",
+      "startRow": 19,
+      "sourceDate": "2026-07-28",
+      "dateLabel": "28\n(화)",
+      "dateCell": "A15",
+      "sourceDateCandidate": "2026-07-28",
+      "dateIssues": [],
+      "sourceSha256": "59a5f3db54728be889bf5ec0601f5578b4c1a7e5f614b2bff7c2564b6c404c4d",
+      "amountHeader": "식재료량(g)",
+      "verification": "추출 색인: 원문 재열람 전, 날짜 오류 행은 자동 사용 제외",
+      "meal": "중식",
+      "name": "소고기청경채 진밥",
+      "ingredients": [
+        {
+          "name": "쌀",
+          "grams": 28,
+          "cell": "E19"
+        },
+        {
+          "name": "소고기",
+          "grams": 20,
+          "cell": "E20"
+        },
+        {
+          "name": "청경채",
+          "grams": 10,
+          "cell": "E21"
+        },
+        {
+          "name": "양파",
+          "grams": 5,
+          "cell": "E22"
+        },
+        {
+          "name": "당근",
+          "grams": 5,
+          "cell": "E23"
+        }
+      ],
+      "method": [
+        "① 쌀은 불린다.\n② 소고기는 삶아 가늘게 찢어 0.7cm 정도 크기로 다진다. \n③ 청경채와 양파, 당근은 0.7cm 정도의 크기로 잘게 다진다. \n④ 냄비에 ①과 물 80g을 넣고 끓인다.\n⑤ ④이 끓어 오르면 약불로 줄이고 ②, ③을 넣어 눌어\n붙지 않게 잘 저어가며 끓인다."
+      ],
+      "endRow": 23,
+      "range": "A19:F23"
+    },
+    "originalCells": [
+      {
+        "B19": "중식",
+        "C19": "소고기청경채\n진밥",
+        "D19": "쌀",
+        "E19": 28,
+        "F19": "① 쌀은 불린다.\n② 소고기는 삶아 가늘게 찢어 0.7cm 정도 크기로 다진다. \n③ 청경채와 양파, 당근은 0.7cm 정도의 크기로 잘게 다진다. \n④ 냄비에 ①과 물 80g을 넣고 끓인다.\n⑤ ④이 끓어 오르면 약불로 줄이고 ②, ③을 넣어 눌어\n붙지 않게 잘 저어가며 끓인다."
+      },
+      {
+        "D20": "소고기",
+        "E20": 20
+      },
+      {
+        "D21": "청경채",
+        "E21": 10
+      },
+      {
+        "D22": "양파",
+        "E22": 5
+      },
+      {
+        "D23": "당근",
+        "E23": 5
+      }
+    ],
+    "originalDateCell": {
+      "A15": "28\n(화)"
+    },
+    "checks": {
+      "sha256": true,
+      "postDate": true,
+      "dateAndWeekday": true
+    }
+  },
+  {
+    "id": "R8",
+    "source": {
+      "postId": "3936",
+      "postTitle": "2026년 8월 식단 및 레시피(이유식)",
+      "posted": "2026-07-15",
+      "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3936&table_id=table_1670337543",
+      "file": "3936\\2026년 8월 완료기 이유식 레시피.xlsx",
+      "filename": "2026년 8월 완료기 이유식 레시피.xlsx",
+      "sheet": "2주",
+      "startRow": 40,
+      "sourceDate": "2026-08-05",
+      "dateLabel": "5\n(수)",
+      "dateCell": "A36",
+      "sourceDateCandidate": "2026-08-05",
+      "dateIssues": [],
+      "sourceSha256": "6b3992a0f8d023f45625079c6cbdbac8a271c60d1d75f995f44f248173d67cbf",
+      "amountHeader": "식재료량(g)",
+      "verification": "추출 색인: 원문 재열람 전, 날짜 오류 행은 자동 사용 제외",
+      "meal": "중식",
+      "name": "두부 느타리버섯 진밥",
+      "ingredients": [
+        {
+          "name": "쌀",
+          "grams": 28,
+          "cell": "E40"
+        },
+        {
+          "name": "두부",
+          "grams": 20,
+          "cell": "E41"
+        },
+        {
+          "name": "느타리버섯",
+          "grams": 10,
+          "cell": "E42"
+        },
+        {
+          "name": "당근",
+          "grams": 5,
+          "cell": "E43"
+        },
+        {
+          "name": "양파",
+          "grams": 5,
+          "cell": "E44"
+        }
+      ],
+      "method": [
+        "① 쌀은 불린다.\n② 두부는 으깨고 느타리버섯과 당근, 양파는 0.7cm 정도의 크기로 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      ],
+      "endRow": 44,
+      "range": "A40:F44"
+    },
+    "originalCells": [
+      {
+        "B40": "중식",
+        "C40": "두부\n느타리버섯\n진밥",
+        "D40": "쌀",
+        "E40": 28,
+        "F40": "① 쌀은 불린다.\n② 두부는 으깨고 느타리버섯과 당근, 양파는 0.7cm 정도의 크기로 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      },
+      {
+        "D41": "두부",
+        "E41": 20
+      },
+      {
+        "D42": "느타리버섯",
+        "E42": 10
+      },
+      {
+        "D43": "당근",
+        "E43": 5
+      },
+      {
+        "D44": "양파",
+        "E44": 5
+      }
+    ],
+    "originalDateCell": {
+      "A36": "5\n(수)"
+    },
+    "checks": {
+      "sha256": true,
+      "postDate": true,
+      "dateAndWeekday": true
+    }
+  },
+  {
+    "id": "R9",
+    "source": {
+      "postId": "3047",
+      "postTitle": "2025년 9월 식단 및 레시피(이유식)",
+      "posted": "2025-08-14",
+      "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3047&table_id=table_1670337543",
+      "file": "3047\\2025년 9월 완료기 이유식 레시피.xlsx",
+      "filename": "2025년 9월 완료기 이유식 레시피.xlsx",
+      "sheet": "5주",
+      "startRow": 8,
+      "sourceDate": "2025-09-29",
+      "dateLabel": "29\n(월)",
+      "dateCell": "A4",
+      "sourceDateCandidate": "2025-09-29",
+      "dateIssues": [],
+      "sourceSha256": "464d53e62b5d5b3367ee2ed71578e52fe129d3c8023c9b29ef723d0e7036b90c",
+      "amountHeader": "식재료량(g)",
+      "verification": "추출 색인: 원문 재열람 전, 날짜 오류 행은 자동 사용 제외",
+      "meal": "중식",
+      "name": "달걀고구마진밥",
+      "ingredients": [
+        {
+          "name": "쌀",
+          "grams": 28,
+          "cell": "E8"
+        },
+        {
+          "name": "달걀",
+          "grams": 20,
+          "cell": "E9"
+        },
+        {
+          "name": "고구마",
+          "grams": 10,
+          "cell": "E10"
+        },
+        {
+          "name": "당근",
+          "grams": 5,
+          "cell": "E11"
+        },
+        {
+          "name": "애호박",
+          "grams": 5,
+          "cell": "E12"
+        }
+      ],
+      "method": [
+        "① 쌀은 불린다.\n② 그릇에 달걀을 풀고 고구마와 당근, 애호박은 0.7cm 정도의 크기로 잘게 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      ],
+      "endRow": 12,
+      "range": "A8:F12"
+    },
+    "originalCells": [
+      {
+        "B8": "중식",
+        "C8": "달걀고구마진밥",
+        "D8": "쌀",
+        "E8": 28,
+        "F8": "① 쌀은 불린다.\n② 그릇에 달걀을 풀고 고구마와 당근, 애호박은 0.7cm 정도의 크기로 잘게 다진다.\n③ 냄비에 ①과 물 80g을 넣고 끓인다.\n④ ③이 끓어 오르면 약불로 줄이고 ②를 넣어 눌어붙지 않게 잘 저어가며 끓인다."
+      },
+      {
+        "D9": "달걀",
+        "E9": 20
+      },
+      {
+        "D10": "고구마",
+        "E10": 10
+      },
+      {
+        "D11": "당근",
+        "E11": 5
+      },
+      {
+        "D12": "애호박",
+        "E12": 5
+      }
+    ],
+    "originalDateCell": {
+      "A4": "29\n(월)"
+    },
+    "checks": {
+      "sha256": true,
+      "postDate": true,
+      "dateAndWeekday": true
+    }
+  }
+]

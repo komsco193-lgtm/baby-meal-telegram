@@ -1,0 +1,291 @@
+{
+  "generatedAt": "2026-09-13T16:27:45.859Z",
+  "weekStart": "2026-09-21",
+  "weekEnd": "2026-09-27",
+  "sourceBoard": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php",
+  "preferredSourceYear": 2026,
+  "seasonalSource": {
+    "ingredients": [
+      "고구마",
+      "느타리버섯"
+    ],
+    "title": "해남군 어린이·사회복지급식관리지원센터 2025년 9월 식단 안내",
+    "page": 3,
+    "url": "https://info.childcare.go.kr/info/pnis/search/PnisFileDownload.jsp?STCODE=46820000004&flag=DNLL&wkyymm=202509"
+  },
+  "meals": [
+    {
+      "date": "2026-09-21",
+      "breakfast": "R1",
+      "lunch": "R2",
+      "dinner": "R3"
+    },
+    {
+      "date": "2026-09-22",
+      "breakfast": "R4",
+      "lunch": "R5",
+      "dinner": "R6"
+    },
+    {
+      "date": "2026-09-23",
+      "breakfast": "R7",
+      "lunch": "R3",
+      "dinner": "R8"
+    },
+    {
+      "date": "2026-09-24",
+      "breakfast": "R1",
+      "lunch": "R8",
+      "dinner": "R2"
+    },
+    {
+      "date": "2026-09-25",
+      "breakfast": "R4",
+      "lunch": "R2",
+      "dinner": "R5"
+    },
+    {
+      "date": "2026-09-26",
+      "breakfast": "R7",
+      "lunch": "R5",
+      "dinner": "R3"
+    },
+    {
+      "date": "2026-09-27",
+      "breakfast": "R1",
+      "lunch": "R6",
+      "dinner": "R8"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "R1",
+      "name": "느타리버섯죽",
+      "usedDates": [
+        {
+          "date": "2026-09-21",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-09-24",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-09-27",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-04",
+        "meal": "오전간식",
+        "name": "느타리버섯죽",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "1주",
+        "range": "A51:F54",
+        "dateCell": "A51"
+      }
+    },
+    {
+      "id": "R2",
+      "name": "소고기느타리버섯진밥",
+      "usedDates": [
+        {
+          "date": "2026-09-21",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-09-24",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-09-25",
+          "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-23",
+        "meal": "중식",
+        "name": "소고기느타리버섯진밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "4주",
+        "range": "A40:F44",
+        "dateCell": "A38"
+      }
+    },
+    {
+      "id": "R3",
+      "name": "소고기 숙주진밥",
+      "usedDates": [
+        {
+          "date": "2026-09-21",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-09-23",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-09-26",
+          "meal": "저녁"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-29",
+        "meal": "중식",
+        "name": "소고기 숙주진밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A28:F32",
+        "dateCell": "A24"
+      }
+    },
+    {
+      "id": "R4",
+      "name": "팽이버섯죽",
+      "usedDates": [
+        {
+          "date": "2026-09-22",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-09-25",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-30",
+        "meal": "오전간식",
+        "name": "팽이버섯죽",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A42:F45",
+        "dateCell": "A42"
+      }
+    },
+    {
+      "id": "R5",
+      "name": "소고기참나물 진밥",
+      "usedDates": [
+        {
+          "date": "2026-09-22",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-09-25",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-09-26",
+          "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-18",
+        "meal": "중식",
+        "name": "소고기참나물 진밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "3주",
+        "range": "A68:F72",
+        "dateCell": "A64"
+      }
+    },
+    {
+      "id": "R6",
+      "name": "달걀콩나물 진밥",
+      "usedDates": [
+        {
+          "date": "2026-09-22",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-09-27",
+          "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-10",
+        "meal": "중식",
+        "name": "달걀콩나물 진밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "2주",
+        "range": "A41:F45",
+        "dateCell": "A37"
+      }
+    },
+    {
+      "id": "R7",
+      "name": "미역죽",
+      "usedDates": [
+        {
+          "date": "2026-09-23",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-09-26",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-07",
+        "meal": "오전간식",
+        "name": "미역죽",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "2주",
+        "range": "A4:F7",
+        "dateCell": "A4"
+      }
+    },
+    {
+      "id": "R8",
+      "name": "두부배추진밥",
+      "usedDates": [
+        {
+          "date": "2026-09-23",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-09-24",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-09-27",
+          "meal": "저녁"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-03",
+        "meal": "중식",
+        "name": "두부배추진밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "1주",
+        "range": "A41:F45",
+        "dateCell": "A37"
+      }
+    }
+  ],
+  "note": "공개 원문 색인에서 추출한 출처를 가정용 무염 기준으로 재구성한 자동 생성 기록입니다."
+}

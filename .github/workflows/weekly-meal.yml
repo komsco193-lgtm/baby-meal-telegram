@@ -1,0 +1,60 @@
+name: 아기 주간 식단 텔레그램 발송
+
+on:
+  # GitHub cron uses UTC. 11:00 UTC is 20:00 Asia/Seoul.
+  schedule:
+    - cron: '0 11 * * 3'
+  workflow_dispatch:
+    inputs:
+      week_start:
+        description: '월요일 시작일(YYYY-MM-DD). 비우면 다음 월요일을 계산합니다.'
+        required: false
+        type: string
+      send:
+        description: '생성한 식단을 텔레그램으로 발송'
+        required: false
+        default: true
+        type: boolean
+
+concurrency:
+  group: baby-meal-weekly
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    env:
+      WEEK_START: ${{ inputs.week_start }}
+      RUN_SEND: ${{ github.event_name == 'schedule' || inputs.send == true }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - name: 저장소 가져오기
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Node.js 준비
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 다음 주 식단 생성 또는 기존 검증본 유지
+        id: plan
+        run: node scripts/generate_weekly.mjs
+
+      - name: 텔레그램 발송
+        if: env.RUN_SEND == 'true'
+        run: node scripts/cloud_sender.mjs "menus/weekly/${{ steps.plan.outputs.week_start }}.txt" "week-${{ steps.plan.outputs.week_start }}"
+
+      - name: 식단·발송 기록 저장
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add menus/weekly cloud-state/receipts.json
+          git diff --cached --quiet || git commit -m "주간 식단 기록 저장"
+          git push

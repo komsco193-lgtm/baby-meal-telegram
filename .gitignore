@@ -1,0 +1,23 @@
+.state/
+*.log
+
+# GitHub Actions cloud copy: keep the Windows DPAPI token and local extraction
+# cache out of source control. The compact public recipe index is included.
+.tools/
+sources/
+
+# Local-only files
+node_modules/
+cloud-state/send.lock
+
+# Local collection/connection helpers are intentionally not part of the
+# cloud repository. They use Windows DPAPI or write to the local archive.
+collect_eunpyeong.mjs
+extract_hwp_text.py
+extract_sources.py
+fetch_eunpyeong.mjs
+query_sources.py
+setup.html
+telegram.mjs
+menus/2026-09-14.txt
+menus/2026-09-14.sources.json
