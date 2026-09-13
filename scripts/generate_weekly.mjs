@@ -109,15 +109,40 @@ function recipeScore(row, seasonalNames, usedNames, offset) {
   return score;
 }
 
-function chooseDistinct(rows, count, seasonalNames, offset) {
+function proteinKey(row) {
+  const text = ingredientNames(row).join(' ');
+  return text.match(/소고기|돼지|닭|가자미|생선|달걀|계란|두부|콩/)?.[0] || '식물성';
+}
+function sharesIngredient(name, selected) {
+  const n = norm(name);
+  return [...selected].some(s => n.includes(s) || s.includes(n));
+}
+function chooseDistinct(rows, count, seasonalNames, offset, diversifyProtein = false) {
   const chosen = [];
   const used = new Set();
+  const selectedIngredients = new Set();
+  const selectedProteins = new Set();
   const pool = [...rows];
   while (chosen.length < count && pool.length) {
-    pool.sort((a, b) => recipeScore(b, seasonalNames, used, offset) - recipeScore(a, seasonalNames, used, offset));
+    pool.sort((a, b) => {
+      const score = row => {
+        const base = recipeScore(row, seasonalNames, used, offset);
+        const names = ingredientNames(row).map(norm);
+        const shared = names.filter(n => sharesIngredient(n, selectedIngredients)).length;
+        const fresh = names.filter(n => !sharesIngredient(n, selectedIngredients)).length;
+        const protein = proteinKey(row);
+        const proteinBonus = diversifyProtein
+          ? (selectedProteins.has(protein) ? -3 : (selectedProteins.size ? 8 : 0))
+          : 0;
+        return base + shared * 6 - fresh * 1.5 + proteinBonus;
+      };
+      return score(b) - score(a);
+    });
     const row = pool.shift();
     if (used.has(norm(row.name))) continue;
     chosen.push(row); used.add(norm(row.name));
+    ingredientNames(row).map(norm).forEach(n => selectedIngredients.add(n));
+    selectedProteins.add(proteinKey(row));
   }
   return chosen;
 }
@@ -175,7 +200,7 @@ function buildPlan(weekStart, candidates, seasonalInfo) {
   const seasonalNames = seasonalInfo?.ingredients || [];
   const weekHash = crypto.createHash('sha256').update(weekStart).digest().readUInt32BE(0);
   const breakfasts = chooseDistinct(candidates.breakfasts, Math.min(3, candidates.breakfasts.length), seasonalNames, weekHash);
-  const mains = chooseDistinct(candidates.mains, Math.min(5, candidates.mains.length), seasonalNames, weekHash + 17);
+  const mains = chooseDistinct(candidates.mains, Math.min(5, candidates.mains.length), seasonalNames, weekHash + 17, true);
   if (breakfasts.length < 2 || mains.length < 4) throw new Error('주간 레시피 후보가 부족합니다.');
   const usage = new Map();
   const addUse = (row, date, meal) => {
