@@ -8,5 +8,17 @@
     ],
     "total": 2,
     "sentAt": "2026-09-13T17:02:32.291Z"
+  },
+  "week-2026-09-14-revised": {
+    "hash": "84a7b479d3496f0f700deba25fada01fc0e431123fd70638dc6411760aeb7e96",
+    "status": "sent",
+    "messageIds": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "total": 4,
+    "sentAt": "2026-09-14T00:48:57.319Z"
   }
 }
