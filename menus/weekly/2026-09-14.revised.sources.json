@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T00:41:23.140Z",
+  "generatedAt": "2026-09-14T00:42:06.833Z",
   "weekStart": "2026-09-14",
   "weekEnd": "2026-09-20",
   "revision": true,
@@ -43,6 +43,11 @@
     }
   ],
   "preferredSourceYear": 2026,
+  "sourceWindow": {
+    "kind": "week",
+    "start": "2026-09-14",
+    "end": "2026-09-20"
+  },
   "seasonalSource": {
     "ingredients": [
       "고구마",

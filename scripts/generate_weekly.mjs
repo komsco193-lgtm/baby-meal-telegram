@@ -434,6 +434,7 @@ if (keepExisting) {
     sourceBoard: BOARD_URL,
     koreanSources,
     preferredSourceYear: plan.preferredYear,
+    sourceWindow: plan.sourceWindow,
     seasonalSource: plan.seasonalInfo || null,
     meals: plan.menuRows,
     recipes: plan.recipes.map(r => ({ id: r.id, name: r.name, usedDates: r.usedDates, source: {
