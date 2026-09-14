@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T22:35:24.902Z",
+  "generatedAt": "2026-09-14T00:41:23.581Z",
   "weekStart": "2026-09-21",
   "weekEnd": "2026-09-27",
   "revision": false,
@@ -63,43 +63,43 @@
       "date": "2026-09-22",
       "breakfast": "R4",
       "lunch": "R5",
-      "dinner": "R6"
+      "dinner": "R2"
     },
     {
       "date": "2026-09-23",
-      "breakfast": "R7",
+      "breakfast": "R6",
       "lunch": "R3",
-      "dinner": "R8"
+      "dinner": "R5"
     },
     {
       "date": "2026-09-24",
       "breakfast": "R1",
-      "lunch": "R8",
-      "dinner": "R2"
-    },
-    {
-      "date": "2026-09-25",
-      "breakfast": "R4",
-      "lunch": "R2",
-      "dinner": "R5"
-    },
-    {
-      "date": "2026-09-26",
-      "breakfast": "R7",
       "lunch": "R5",
       "dinner": "R3"
     },
     {
+      "date": "2026-09-25",
+      "breakfast": "R4",
+      "lunch": "R3",
+      "dinner": "R2"
+    },
+    {
+      "date": "2026-09-26",
+      "breakfast": "R6",
+      "lunch": "R2",
+      "dinner": "R5"
+    },
+    {
       "date": "2026-09-27",
       "breakfast": "R1",
-      "lunch": "R6",
-      "dinner": "R8"
+      "lunch": "R3",
+      "dinner": "R2"
     }
   ],
   "recipes": [
     {
       "id": "R1",
-      "name": "소고기양파죽 (무염)",
+      "name": "오이죽 (무염)",
       "usedDates": [
         {
           "date": "2026-09-21",
@@ -115,51 +115,59 @@
         }
       ],
       "source": {
-        "sourceDate": "2026-09-11",
+        "sourceDate": "2026-09-21",
         "meal": "오전간식",
-        "name": "소고기양파죽",
+        "name": "오이죽",
         "posted": "2026-08-14",
-        "postTitle": "2026년 9월 식단 및 레시피(1-2세)",
-        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4061&table_id=table_1670337543",
-        "filename": "2026년 9월 1-2세 알레르기 식단 레시피.xlsx",
-        "sheet": "2주",
-        "range": "A157:H162",
-        "dateCell": "A157"
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "4주",
+        "range": "A4:F7",
+        "dateCell": "A4"
       }
     },
     {
       "id": "R2",
-      "name": "달걀콩나물 진밥 (무염)",
+      "name": "닭고기 양배추진밥 (무염)",
       "usedDates": [
         {
           "date": "2026-09-21",
           "meal": "점심"
         },
         {
-          "date": "2026-09-24",
+          "date": "2026-09-22",
           "meal": "저녁"
         },
         {
           "date": "2026-09-25",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-09-26",
           "meal": "점심"
+        },
+        {
+          "date": "2026-09-27",
+          "meal": "저녁"
         }
       ],
       "source": {
-        "sourceDate": "2026-09-10",
+        "sourceDate": "2026-09-21",
         "meal": "중식",
-        "name": "달걀콩나물 진밥",
+        "name": "닭고기 양배추진밥",
         "posted": "2026-08-14",
         "postTitle": "2026년 9월 식단 및 레시피(이유식)",
         "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
         "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
-        "sheet": "2주",
-        "range": "A41:F45",
-        "dateCell": "A37"
+        "sheet": "4주",
+        "range": "A8:F12",
+        "dateCell": "A4"
       }
     },
     {
       "id": "R3",
-      "name": "닭고기 청경채진밥 (무염)",
+      "name": "소고기느타리버섯진밥 (무염)",
       "usedDates": [
         {
           "date": "2026-09-21",
@@ -170,90 +178,76 @@
           "meal": "점심"
         },
         {
-          "date": "2026-09-26",
+          "date": "2026-09-24",
           "meal": "저녁"
-        }
-      ],
-      "source": {
-        "sourceDate": "2026-09-04",
-        "meal": "중식",
-        "name": "닭고기 청경채진밥",
-        "posted": "2026-08-14",
-        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
-        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
-        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
-        "sheet": "1주",
-        "range": "A55:F59",
-        "dateCell": "A51"
-      }
-    },
-    {
-      "id": "R4",
-      "name": "느타리버섯죽 (무염)",
-      "usedDates": [
-        {
-          "date": "2026-09-22",
-          "meal": "아침"
         },
         {
           "date": "2026-09-25",
-          "meal": "아침"
-        }
-      ],
-      "source": {
-        "sourceDate": "2026-09-04",
-        "meal": "오전간식",
-        "name": "느타리버섯죽",
-        "posted": "2026-08-14",
-        "postTitle": "2026년 9월 식단 및 레시피(1-2세)",
-        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4061&table_id=table_1670337543",
-        "filename": "2026년 9월 1-2세 알레르기 식단 레시피.xlsx",
-        "sheet": "1주",
-        "range": "A114:H119",
-        "dateCell": "A114"
-      }
-    },
-    {
-      "id": "R5",
-      "name": "두부배추진밥 (무염)",
-      "usedDates": [
-        {
-          "date": "2026-09-22",
           "meal": "점심"
-        },
-        {
-          "date": "2026-09-25",
-          "meal": "저녁"
-        },
-        {
-          "date": "2026-09-26",
-          "meal": "점심"
-        }
-      ],
-      "source": {
-        "sourceDate": "2026-09-03",
-        "meal": "중식",
-        "name": "두부배추진밥",
-        "posted": "2026-08-14",
-        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
-        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
-        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
-        "sheet": "1주",
-        "range": "A41:F45",
-        "dateCell": "A37"
-      }
-    },
-    {
-      "id": "R6",
-      "name": "순살임연수 가지진밥 (무염)",
-      "usedDates": [
-        {
-          "date": "2026-09-22",
-          "meal": "저녁"
         },
         {
           "date": "2026-09-27",
           "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-23",
+        "meal": "중식",
+        "name": "소고기느타리버섯진밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "4주",
+        "range": "A40:F44",
+        "dateCell": "A38"
+      }
+    },
+    {
+      "id": "R4",
+      "name": "브로콜리죽 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-22",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-09-25",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-22",
+        "meal": "오전간식",
+        "name": "브로콜리죽",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "4주",
+        "range": "A19:F22",
+        "dateCell": "A19"
+      }
+    },
+    {
+      "id": "R5",
+      "name": "순살임연수 가지진밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-22",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-09-23",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-09-24",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-09-26",
+          "meal": "저녁"
         }
       ],
       "source": {
@@ -270,8 +264,8 @@
       }
     },
     {
-      "id": "R7",
-      "name": "얼갈이죽 (무염)",
+      "id": "R6",
+      "name": "참깨죽 (무염)",
       "usedDates": [
         {
           "date": "2026-09-23",
@@ -283,45 +277,15 @@
         }
       ],
       "source": {
-        "sourceDate": "2026-09-18",
-        "meal": "오전간식",
-        "name": "얼갈이죽",
-        "posted": "2026-08-14",
-        "postTitle": "2026년 9월 식단 및 레시피(1-2세)",
-        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4061&table_id=table_1670337543",
-        "filename": "2026년 9월 1-2세 알레르기 식단 레시피.xlsx",
-        "sheet": "3주",
-        "range": "A140:H145",
-        "dateCell": "A140"
-      }
-    },
-    {
-      "id": "R8",
-      "name": "소고기느타리버섯진밥 (무염)",
-      "usedDates": [
-        {
-          "date": "2026-09-23",
-          "meal": "저녁"
-        },
-        {
-          "date": "2026-09-24",
-          "meal": "점심"
-        },
-        {
-          "date": "2026-09-27",
-          "meal": "저녁"
-        }
-      ],
-      "source": {
         "sourceDate": "2026-09-23",
-        "meal": "중식",
-        "name": "소고기느타리버섯진밥",
+        "meal": "오전간식",
+        "name": "참깨죽",
         "posted": "2026-08-14",
         "postTitle": "2026년 9월 식단 및 레시피(이유식)",
         "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
         "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
         "sheet": "4주",
-        "range": "A40:F44",
+        "range": "A38:F39",
         "dateCell": "A38"
       }
     }

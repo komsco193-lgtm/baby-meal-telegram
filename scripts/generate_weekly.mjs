@@ -83,25 +83,36 @@ function latestByName(rows) {
   return [...map.values()];
 }
 
-function chooseCandidates(records, month, year) {
+function chooseCandidates(records, month, year, weekStart = '', weekEnd = '') {
   const monthRows = records.filter(r => Number(String(r.sourceDate).slice(5, 7)) === month && Number(String(r.sourceDate).slice(0, 4)) <= year);
   if (!monthRows.length) throw new Error(`${month}월 출처 레시피가 색인에 없습니다.`);
   const availableYears = [...new Set(monthRows.map(r => Number(String(r.sourceDate).slice(0, 4))))].sort((a, b) => b - a);
   const preferredYear = availableYears[0];
   const preferred = monthRows.filter(r => Number(String(r.sourceDate).slice(0, 4)) === preferredYear);
   const breakfastFilter = r => /죽|진밥|밥/.test(r.name) && !snackOnly.test(r.name);
-  const breakfastsToddler = latestByName(preferred.filter(r => isToddlerSource(r) && mealIs(r, /오전간식|오전/)).filter(breakfastFilter));
-  const breakfastsBaby = latestByName(preferred.filter(r => isBabySource(r) && mealIs(r, /오전간식|오전/)).filter(breakfastFilter));
-  const breakfasts = breakfastsToddler.length >= 2 ? breakfastsToddler : [...breakfastsToddler, ...breakfastsBaby];
   const mainFilter = r => hasMainName(r) && hasProtein(r) && !hasHighSodiumProcessedFood(r);
-  const mainsToddler = latestByName(preferred.filter(r => isToddlerSource(r) && mealIs(r, /저녁|점심|중식/)).filter(mainFilter));
-  const mainsBaby = latestByName(preferred.filter(r => isBabySource(r) && mealIs(r, /중식|점심|저녁/)).filter(mainFilter));
-  // Use 1~2세 menus as the main pool, while retaining baby recipes so that
-  // iron/protein sources such as egg, tofu and fish can rotate into the week.
-  const mains = [...mainsToddler, ...mainsBaby];
-  if (breakfasts.length < 2) throw new Error(`${preferredYear}년 ${month}월 아침 후보가 부족합니다.`);
-  if (mains.length < 4) throw new Error(`${preferredYear}년 ${month}월 주식 후보가 부족합니다.`);
-  return { preferredYear, breakfasts, mains };
+  const buildPools = rows => {
+    const breakfastsToddler = latestByName(rows.filter(r => isToddlerSource(r) && mealIs(r, /오전간식|오전/)).filter(breakfastFilter));
+    const breakfastsBaby = latestByName(rows.filter(r => isBabySource(r) && mealIs(r, /오전간식|오전/)).filter(breakfastFilter));
+    const breakfasts = breakfastsToddler.length >= 2 ? breakfastsToddler : [...breakfastsToddler, ...breakfastsBaby];
+    const mainsToddler = latestByName(rows.filter(r => isToddlerSource(r) && mealIs(r, /저녁|점심|중식/)).filter(mainFilter));
+    const mainsBaby = latestByName(rows.filter(r => isBabySource(r) && mealIs(r, /중식|점심|저녁/)).filter(mainFilter));
+    // Use 1~2세 menus as the main pool, while retaining baby recipes so that
+    // iron/protein sources such as egg, tofu and fish can rotate into the week.
+    return { breakfasts, mains: [...mainsToddler, ...mainsBaby] };
+  };
+  const weekRows = preferred.filter(r => (!weekStart || String(r.sourceDate) >= weekStart) && (!weekEnd || String(r.sourceDate) <= weekEnd));
+  let pools = buildPools(weekRows);
+  // Three distinct main dishes are sufficient to rotate lunch/dinner across
+  // the week. Keeping that threshold low avoids pulling a later date from the
+  // same month merely to manufacture a fourth source recipe.
+  let sourceWindow = weekRows.length && pools.breakfasts.length >= 2 && pools.mains.length >= 3
+    ? { kind: 'week', start: weekStart, end: weekEnd }
+    : { kind: 'month', year: preferredYear, month };
+  if (sourceWindow.kind === 'month') pools = buildPools(preferred);
+  if (pools.breakfasts.length < 2) throw new Error(`${preferredYear}년 ${month}월 아침 후보가 부족합니다.`);
+  if (pools.mains.length < 3) throw new Error(`${preferredYear}년 ${month}월 주식 후보가 부족합니다.`);
+  return { preferredYear, ...pools, sourceWindow };
 }
 
 function recipeScore(row, seasonalNames, usedNames, offset) {
@@ -249,7 +260,7 @@ function buildPlan(weekStart, candidates, seasonalInfo) {
   const weekHash = crypto.createHash('sha256').update(weekStart).digest().readUInt32BE(0);
   const breakfasts = chooseDistinct(candidates.breakfasts, Math.min(3, candidates.breakfasts.length), seasonalNames, weekHash);
   const mains = chooseDistinct(candidates.mains, Math.min(5, candidates.mains.length), seasonalNames, weekHash + 17, true);
-  if (breakfasts.length < 2 || mains.length < 4) throw new Error('주간 레시피 후보가 부족합니다.');
+  if (breakfasts.length < 2 || mains.length < 3) throw new Error('주간 레시피 후보가 부족합니다.');
   const usage = new Map();
   const addUse = (row, date, meal) => {
     const key = `${row.postId}|${row.range}|${row.name}`;
@@ -274,7 +285,7 @@ function buildPlan(weekStart, candidates, seasonalInfo) {
     lunch: recipeByKey.get(`${r.lunch.postId}|${r.lunch.range}|${r.lunch.name}`).id,
     dinner: recipeByKey.get(`${r.dinner.postId}|${r.dinner.range}|${r.dinner.name}`).id
   }));
-  return { start, end, recipes, menuRows, seasonalInfo, preferredYear: candidates.preferredYear };
+  return { start, end, recipes, menuRows, seasonalInfo, preferredYear: candidates.preferredYear, sourceWindow: candidates.sourceWindow };
 }
 
 function totalsForPlan(plan) {
@@ -317,6 +328,11 @@ function render(plan, weekStart, koreanSources) {
   lines.push('12개월 아기 · 무염 가정용 구성 · 아침·점심·저녁 21끼');
   lines.push('');
   lines.push('은평구 어린이·사회복지급식관리지원센터의 공개 원문 레시피를 바탕으로 가정용으로 다시 구성했습니다. 센터가 검수한 가정용 주간 식단이 아니며, 각 원문과 변경 사항을 아래에 따로 적었습니다.');
+  if (plan.sourceWindow?.kind === 'week') {
+    lines.push(`원문 선택 범위: ${plan.sourceWindow.start}~${plan.sourceWindow.end}에 게시된 월별 원문을 우선 사용했습니다.`);
+  } else if (plan.sourceWindow?.kind === 'month') {
+    lines.push(`원문 선택 범위: 해당 주간 자료가 부족해 ${plan.sourceWindow.year}년 ${plan.sourceWindow.month}월 원문으로 보완했습니다.`);
+  }
   lines.push('');
   lines.push('대한민국 기준 참고 출처');
   for (const source of koreanSources) lines.push(`• ${source.name}: ${source.purpose} — ${source.url}`);
@@ -405,7 +421,7 @@ if (keepExisting) {
 } else {
   const seasonal = fs.existsSync(SEASONAL) ? JSON.parse(fs.readFileSync(SEASONAL, 'utf8')) : {};
   const koreanSources = fs.existsSync(KOREAN_SOURCES) ? JSON.parse(fs.readFileSync(KOREAN_SOURCES, 'utf8')) : [];
-  const candidates = chooseCandidates(loadRecords(), month, year);
+  const candidates = chooseCandidates(loadRecords(), month, year, weekStart, iso(addDays(start, 6)));
   const plan = buildPlan(weekStart, candidates, seasonal[String(month)] || null);
   const text = render(plan, weekStart, koreanSources);
   writeOutput(outputStem, text);
