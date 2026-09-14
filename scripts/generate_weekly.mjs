@@ -234,11 +234,16 @@ function makeRecipe(row, id, usedDates) {
     ? ingredients.map(i => `${i.name} ${Number.isFinite(i.amount) ? Math.round(i.amount * 10) / 10 : i.amount}${i.unit}`).join(', ')
     : '원문 재료를 확인하되 가정용 무염 기준으로 조정';
   const raw = cleanMethod(row.method?.join(' '));
-  const protein = ingredientNames(row).some(n => /고기|소고기|돼지|닭|생선|가자미|달걀|계란|두부|콩/.test(n));
+  const names = ingredientNames(row).join(' ');
+  const cooking = /생선|가자미|임연수/.test(names)
+    ? '생선은 중심온도 85℃에서 1분 이상 익힌 뒤 잔가시를 다시 확인해 잘게 부숩니다.'
+    : /고기|돼지|닭|달걀|계란/.test(names)
+      ? '고기·달걀은 중심온도 75℃에서 1분 이상 완전히 익힙니다. 달걀은 흰자·노른자 모두 굳게 익힙니다.'
+      : '두부가 있으면 함께 가열하고, 채소는 눌렀을 때 쉽게 으깨질 정도로 익힙니다.';
   const steps = [
-    '재료를 씻고 3~5mm 정도로 잘게 썹니다. 고기·생선은 질긴 부분과 잔가시를 다시 확인합니다.',
-    protein ? '고기·생선·달걀·두부를 물에 넣어 속까지 완전히 익힙니다. 달걀은 흰자와 노른자가 모두 굳을 때까지 익힙니다.' : '채소를 물에 넣고 젓가락으로 눌렀을 때 부드러워질 때까지 익힙니다.',
-    '지은 밥과 물을 넣고 약불에서 8~12분 저어 재료가 충분히 부드러워지게 합니다.',
+    '채소를 씻어 아기가 먹을 수 있는 크기로 잘게 썹니다. 고기는 질긴 부분을 제거하고 생고기용 도구는 익힌 음식용과 구분합니다.',
+    cooking,
+    '지은 밥과 익힌 재료에 물을 조금씩 추가하며 부드럽게 끓입니다. 조리량이 많으면 시간이 늘어나므로 속까지 익은 상태를 확인합니다. 진밥으로 만들고 주먹밥처럼 단단히 뭉치지 않습니다.',
     '소금·간장·된장·액젓·설탕·꿀·후추·가염 육수는 넣지 않고, 미지근하게 식혀 아기의 씹는 능력에 맞게 제공합니다.'
   ];
   return {
@@ -329,7 +334,7 @@ function render(plan, weekStart, koreanSources) {
   lines.push('');
   lines.push('은평구 어린이·사회복지급식관리지원센터의 공개 원문 레시피를 바탕으로 가정용으로 다시 구성했습니다. 센터가 검수한 가정용 주간 식단이 아니며, 각 원문과 변경 사항을 아래에 따로 적었습니다.');
   if (plan.sourceWindow?.kind === 'week') {
-    lines.push(`원문 선택 범위: ${plan.sourceWindow.start}~${plan.sourceWindow.end}에 게시된 월별 원문을 우선 사용했습니다.`);
+    lines.push(`원문 선택 범위: 월별 첨부자료에서 식단 날짜가 ${plan.sourceWindow.start}~${plan.sourceWindow.end}인 레시피를 우선 사용했습니다. 게시일은 각 출처에 별도 표시합니다.`);
   } else if (plan.sourceWindow?.kind === 'month') {
     lines.push(`원문 선택 범위: 해당 주간 자료가 부족해 ${plan.sourceWindow.year}년 ${plan.sourceWindow.month}월 원문으로 보완했습니다.`);
   }
@@ -339,7 +344,7 @@ function render(plan, weekStart, koreanSources) {
   lines.push('');
   lines.push('영양·섭취량 기준');
   lines.push('질병관리청의 12~23개월 이유기보충식 기준(평균적인 수유량을 전제로 한 하루 약 550kcal, 하루 3~4회, 1회량은 열량 밀도에 따라 250mL 컵 3/4 정도에서 점차 1컵)을 참고합니다. 이는 참고 범위이며 모유·분유 섭취량, 실제 먹은 양, 성장 상태에 따라 달라지므로 억지로 먹이지 않습니다.');
-  lines.push('한국인 영양소 섭취기준과 국가표준식품성분표로 주간 식품군·철분·단백질·지방·채소 구성을 점검하지만, 개인의 과다·부족 섭취나 성장 문제를 식단만으로 진단하지 않습니다.');
+  lines.push('아래 분량은 원문 재료량을 바탕으로 한 조리 예시입니다. 영양소별 합산·한국인 영양소 섭취기준 충족 검증은 아직 완료하지 않았습니다. 수유·우유·간식과 실제 섭취량을 합쳐야 하루 영양을 평가할 수 있습니다.');
   lines.push('');
   lines.push('이번 주 장보기 목록');
   for (const item of totalsForPlan(plan)) lines.push(purchaseLine(item));
@@ -353,6 +358,25 @@ function render(plan, weekStart, koreanSources) {
     lines.push(`| ${koreanDate(row.date)} | ${recipeMap.get(row.breakfast).name} | ${recipeMap.get(row.lunch).name} | ${recipeMap.get(row.dinner).name} |`);
   }
   lines.push('');
+  lines.push('한꺼번에 조리·소분·냉동');
+  lines.push('매끼 새로 조리하지 않고, 같은 메뉴의 사용 횟수만큼 한꺼번에 만들어 완성식 1끼씩 냉동합니다. 주말 1회 준비를 기본으로 하되 냉각·냉동 공간이 부족하면 2회로 나눕니다. 이번 주 안에 사용할 분량만 준비하는 운영안이며 공식 냉동 보관기한이라는 뜻은 아닙니다.');
+  lines.push('| 메뉴 | 만들 분량 | 한꺼번에 준비할 재료 | 용기 라벨 |');
+  lines.push('|---|---|---|---|');
+  for (const recipe of plan.recipes) {
+    const count = recipe.usedDates.length;
+    const ingredients = recipe.ingredients.map(i => `${i.name} ${Math.round(i.amount * count * 10) / 10}${i.unit}`).join(', ');
+    const labels = recipe.usedDates.map(u => `${koreanDate(u.date)} ${u.meal}`).join(' / ');
+    lines.push(`| ${recipe.id} ${recipe.name} | ${count}끼·${count}용기 | ${ingredients} | ${labels} |`);
+  }
+  lines.push('소분: 생고기 20g×3끼를 사용했다면 60g을 익힌 뒤, 실제 익힌 전체 분량을 3등분합니다. 생고기 20g과 익힌 고기 20g은 같지 않습니다. 완성식도 잘 섞어 해당 용기 수로 균등하게 나누며 물까지 포함한 완성 무게를 재료 무게와 혼동하지 않습니다.');
+  lines.push('냉각: 얕은 1회용량 용기에 나누고 찬물받침 등을 이용해 신속히 식혀 보관합니다. 큰 냄비째 실온에 오래 두지 않습니다. 조리일·메뉴·먹을 날짜를 표시하고 냉동실 -18℃ 이하를 유지합니다.');
+  lines.push('냉동 생선: 전체 봉지를 녹이지 말고 필요한 조각만 꺼냅니다. 냉장 해동 후 바로 완전히 익히며 생것 상태로 해동·재냉동하지 않습니다. 제품이 해동 후 재냉동 금지를 표시한 경우 그 지침을 우선하고 해당 제품은 먹는 날 조리하거나 미리 조리된 무염 제품으로 대체합니다.');
+  lines.push('준비하는 날 조리법');
+  for (const recipe of plan.recipes) {
+    lines.push(`${recipe.id} ${recipe.name}: 위 합산 재료로 조리하고 ${recipe.usedDates.length}끼로 나눕니다.`);
+    recipe.steps.forEach((step, i) => lines.push(`${i + 1}. ${step}`));
+  }
+  lines.push('');
   lines.push('날짜별 레시피');
   lines.push('각 날짜 표의 재료는 아기 1회 제공 기준의 근사치이며, 실제 먹은 양은 식욕과 수유량에 맞춥니다.');
   for (const row of plan.menuRows) {
@@ -363,7 +387,7 @@ function render(plan, weekStart, koreanSources) {
     for (const [meal, id] of [['아침', row.breakfast], ['점심', row.lunch], ['저녁', row.dinner]]) {
       const recipe = recipeMap.get(id);
       const ingredients = recipe.ingredients.map(i => `${i.name} ${Math.round(i.amount * 10) / 10}${i.unit}`).join(', ') || '원문 표 확인';
-      const method = recipe.steps.join(' ');
+      const method = `${recipe.id} 완성식 1용기: 전날 냉장실(5℃ 이하)로 옮겨 해동 → 먹기 직전 속까지 충분히 재가열 → 고루 섞고 먹기 좋은 온도로 식히기. 급할 때는 전자레인지 해동 후 바로 재가열. 시간은 양·기기 출력에 따라 달라집니다.`;
       lines.push(`| ${meal} | ${recipe.name} (${recipe.id}) | ${ingredients} | ${method} |`);
     }
   }
@@ -381,7 +405,10 @@ function render(plan, weekStart, koreanSources) {
     lines.push('');
   }
   lines.push('손질·보관');
-  lines.push('장본 날 뒤쪽 날짜 분량은 1~2회분씩 손질해 냉동하고, 먹기 전날 필요한 만큼 해동합니다. 밥은 1시간 안에 식혀 냉장·냉동하고 냉장 밥은 24시간 안에 사용합니다. 조리한 음식은 한 번만 충분히 재가열하고 먹다 남긴 것은 재사용하지 않습니다.');
+  lines.push('전날 다음 날의 아침·점심·저녁 3용기만 냉장 해동합니다. 상온·온수 해동은 하지 않습니다. 전자레인지 사용 시 중간에 섞어 찬 부분이 남지 않게 하고 충분히 가열한 뒤 식혀 제공합니다. 해동한 완성식은 재냉동하지 않고, 먹일 양만 한 번 재가열하며 아기가 먹다 남긴 음식은 버립니다.');
+  lines.push('해동 근거: 식약처 식품안전나라 https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_no=3120&ntctxt_no=1096371');
+  lines.push('보관 온도 근거: 식약처 https://www.mfds.go.kr/brd/m_827/view.do?seq=3609');
+  lines.push('가열 온도 근거: 식약처 https://mfds.go.kr/brd/m_61/view.do?seq=54398');
   lines.push('');
   lines.push('제철 확인');
   if (plan.seasonalInfo?.ingredients?.length) {
@@ -415,7 +442,7 @@ const existingText = fs.existsSync(existing) ? fs.readFileSync(existing, 'utf8')
 // Keep the already sent first week unchanged. A revision writes a separate
 // file and uses a separate idempotency key so the original receipt remains intact.
 const keepExisting = !forceRegenerate && fs.existsSync(existing) && fs.statSync(existing).size > 0 &&
-  (revision || weekStart === '2026-09-14' || (existingText.includes('| 날짜 | 아침 |') && existingText.includes('대한민국 기준 참고 출처')));
+  (revision || weekStart === '2026-09-14' || (existingText.includes('| 날짜 | 아침 |') && existingText.includes('한꺼번에 조리·소분·냉동')));
 if (keepExisting) {
   console.log(`기존 검증 식단을 유지합니다: ${existing}`);
 } else {
