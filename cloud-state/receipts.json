@@ -20,5 +20,17 @@
     ],
     "total": 4,
     "sentAt": "2026-09-14T00:48:57.319Z"
+  },
+  "week-2026-09-21": {
+    "hash": "6fbc2cfc215856a06bd7ed5739536c6b7a02bae2d84d1af63dbcb02a208d6fdd",
+    "status": "sent",
+    "messageIds": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "total": 4,
+    "sentAt": "2026-09-16T11:07:35.638Z"
   }
 }
