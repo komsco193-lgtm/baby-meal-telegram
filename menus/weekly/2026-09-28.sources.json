@@ -1,0 +1,335 @@
+{
+  "generatedAt": "2026-09-23T11:07:02.022Z",
+  "weekStart": "2026-09-28",
+  "weekEnd": "2026-10-04",
+  "revision": false,
+  "outputFile": "menus/weekly/2026-09-28.txt",
+  "sourceBoard": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php",
+  "koreanSources": [
+    {
+      "name": "질병관리청 국가건강정보포털 · 이유기보충식(이유식)",
+      "purpose": "월령별 식사 횟수와 질감, 12개월 이후 가족 음식으로의 전환 참고",
+      "url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470"
+    },
+    {
+      "name": "대한소아청소년과학회 · 이유식의 시작",
+      "purpose": "소아청소년과 전문학회가 안내하는 이유식 시작·수유 관련 참고",
+      "url": "https://www.pediatrics.or.kr/bbs/index.html?category=A&code=infantcare&gubun=D&key=&keyfield=&mode=view&number=8815&page=1"
+    },
+    {
+      "name": "식품의약품안전처 식품안전나라 · 식품 알레르기",
+      "purpose": "알레르기 유발물질, 제품 표시 확인, 증상 발생 시 대처 참고",
+      "url": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_grp=MENU_NEW01&menu_no=3120&ntctxt_no=1100304"
+    },
+    {
+      "name": "식품의약품안전처 식품안전나라 · 조리·보관",
+      "purpose": "손 씻기, 충분한 가열, 냉장·냉동과 조리식품 보관 참고",
+      "url": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_no=3120&ntctxt_no=1102681"
+    },
+    {
+      "name": "한국영양학회 · 2025 한국인 영양소 섭취기준",
+      "purpose": "연령별 에너지·영양소 목표를 확인하는 국내 기준",
+      "url": "https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=167"
+    },
+    {
+      "name": "질병관리청 · 소아청소년 성장도표",
+      "purpose": "과다·부족 섭취를 실제 성장 상태와 함께 판단할 때 참고",
+      "url": "https://kdca.go.kr/kdca/5458/subview.do"
+    },
+    {
+      "name": "농촌진흥청 · 국가표준식품성분표 안내",
+      "purpose": "식재료의 에너지와 영양소를 계산할 때 사용하는 국내 성분 데이터",
+      "url": "https://rda.go.kr/board/board.do?dataNo=100000800852&mode=view&prgId=day_farmprmninfoEntry"
+    }
+  ],
+  "preferredSourceYear": 2026,
+  "sourceWindow": {
+    "kind": "week",
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "seasonalSource": {
+    "ingredients": [
+      "고구마",
+      "느타리버섯"
+    ],
+    "title": "해남군 어린이·사회복지급식관리지원센터 2025년 9월 식단 안내",
+    "page": 3,
+    "url": "https://info.childcare.go.kr/info/pnis/search/PnisFileDownload.jsp?STCODE=46820000004&flag=DNLL&wkyymm=202509"
+  },
+  "meals": [
+    {
+      "date": "2026-09-28",
+      "breakfast": "R1",
+      "lunch": "R2",
+      "dinner": "R3"
+    },
+    {
+      "date": "2026-09-29",
+      "breakfast": "R4",
+      "lunch": "R5",
+      "dinner": "R6"
+    },
+    {
+      "date": "2026-09-30",
+      "breakfast": "R7",
+      "lunch": "R3",
+      "dinner": "R8"
+    },
+    {
+      "date": "2026-10-01",
+      "breakfast": "R1",
+      "lunch": "R8",
+      "dinner": "R2"
+    },
+    {
+      "date": "2026-10-02",
+      "breakfast": "R4",
+      "lunch": "R2",
+      "dinner": "R5"
+    },
+    {
+      "date": "2026-10-03",
+      "breakfast": "R7",
+      "lunch": "R5",
+      "dinner": "R3"
+    },
+    {
+      "date": "2026-10-04",
+      "breakfast": "R1",
+      "lunch": "R6",
+      "dinner": "R8"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "R1",
+      "name": "콩나물죽 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-28",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-10-01",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-10-04",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-29",
+        "meal": "오전간식",
+        "name": "콩나물죽",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A24:F27",
+        "dateCell": "A24"
+      }
+    },
+    {
+      "id": "R2",
+      "name": "달걀무진밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-28",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-10-01",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-10-02",
+          "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-28",
+        "meal": "중식",
+        "name": "달걀무진밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A8:F12",
+        "dateCell": "A4"
+      }
+    },
+    {
+      "id": "R3",
+      "name": "소고기 숙주진밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-28",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-09-30",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-10-03",
+          "meal": "저녁"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-29",
+        "meal": "중식",
+        "name": "소고기 숙주진밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A28:F32",
+        "dateCell": "A24"
+      }
+    },
+    {
+      "id": "R4",
+      "name": "팽이버섯죽 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-29",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-10-02",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-30",
+        "meal": "오전간식",
+        "name": "팽이버섯죽",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A42:F45",
+        "dateCell": "A42"
+      }
+    },
+    {
+      "id": "R5",
+      "name": "닭고기 오이진밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-29",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-10-02",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-10-03",
+          "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-30",
+        "meal": "중식",
+        "name": "닭고기 오이진밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A46:F50",
+        "dateCell": "A42"
+      }
+    },
+    {
+      "id": "R6",
+      "name": "치킨부떼고(닭살파프리카카레볶음밥) (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-29",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-10-04",
+          "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-30",
+        "meal": "점심",
+        "name": "치킨부떼고(닭살파프리카카레볶음밥)",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(1-2세)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4061&table_id=table_1670337543",
+        "filename": "2026년 9월 1-2세 중식 식단 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A90:H101",
+        "dateCell": "A84"
+      }
+    },
+    {
+      "id": "R7",
+      "name": "근대죽 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-30",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-10-03",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-28",
+        "meal": "오전간식",
+        "name": "근대죽",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4060&table_id=table_1670337543",
+        "filename": "2026년 9월 완료기 이유식 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A4:F7",
+        "dateCell": "A4"
+      }
+    },
+    {
+      "id": "R8",
+      "name": "닭살파프리카볶음밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-09-30",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-10-01",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-10-04",
+          "meal": "저녁"
+        }
+      ],
+      "source": {
+        "sourceDate": "2026-09-30",
+        "meal": "점심",
+        "name": "닭살파프리카데리야끼볶음밥",
+        "posted": "2026-08-14",
+        "postTitle": "2026년 9월 식단 및 레시피(1-2세)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=4061&table_id=table_1670337543",
+        "filename": "2026년 9월 1-2세 알레르기 식단 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A87:H98",
+        "dateCell": "A81"
+      }
+    }
+  ],
+  "note": "공개 원문 색인에서 추출한 출처를 가정용 무염 기준으로 재구성한 자동 생성 기록입니다."
+}
