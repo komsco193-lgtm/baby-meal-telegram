@@ -1,0 +1,327 @@
+{
+  "generatedAt": "2026-10-14T11:21:09.971Z",
+  "weekStart": "2026-10-19",
+  "weekEnd": "2026-10-25",
+  "revision": false,
+  "outputFile": "menus/weekly/2026-10-19.txt",
+  "sourceBoard": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php",
+  "koreanSources": [
+    {
+      "name": "질병관리청 국가건강정보포털 · 이유기보충식(이유식)",
+      "purpose": "월령별 식사 횟수와 질감, 12개월 이후 가족 음식으로의 전환 참고",
+      "url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470"
+    },
+    {
+      "name": "대한소아청소년과학회 · 이유식의 시작",
+      "purpose": "소아청소년과 전문학회가 안내하는 이유식 시작·수유 관련 참고",
+      "url": "https://www.pediatrics.or.kr/bbs/index.html?category=A&code=infantcare&gubun=D&key=&keyfield=&mode=view&number=8815&page=1"
+    },
+    {
+      "name": "식품의약품안전처 식품안전나라 · 식품 알레르기",
+      "purpose": "알레르기 유발물질, 제품 표시 확인, 증상 발생 시 대처 참고",
+      "url": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_grp=MENU_NEW01&menu_no=3120&ntctxt_no=1100304"
+    },
+    {
+      "name": "식품의약품안전처 식품안전나라 · 조리·보관",
+      "purpose": "손 씻기, 충분한 가열, 냉장·냉동과 조리식품 보관 참고",
+      "url": "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_no=3120&ntctxt_no=1102681"
+    },
+    {
+      "name": "한국영양학회 · 2025 한국인 영양소 섭취기준",
+      "purpose": "연령별 에너지·영양소 목표를 확인하는 국내 기준",
+      "url": "https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=167"
+    },
+    {
+      "name": "질병관리청 · 소아청소년 성장도표",
+      "purpose": "과다·부족 섭취를 실제 성장 상태와 함께 판단할 때 참고",
+      "url": "https://kdca.go.kr/kdca/5458/subview.do"
+    },
+    {
+      "name": "농촌진흥청 · 국가표준식품성분표 안내",
+      "purpose": "식재료의 에너지와 영양소를 계산할 때 사용하는 국내 성분 데이터",
+      "url": "https://rda.go.kr/board/board.do?dataNo=100000800852&mode=view&prgId=day_farmprmninfoEntry"
+    }
+  ],
+  "preferredSourceYear": 2025,
+  "sourceWindow": {
+    "kind": "month",
+    "year": 2025,
+    "month": 10
+  },
+  "seasonalSource": null,
+  "meals": [
+    {
+      "date": "2026-10-19",
+      "breakfast": "R1",
+      "lunch": "R2",
+      "dinner": "R3"
+    },
+    {
+      "date": "2026-10-20",
+      "breakfast": "R4",
+      "lunch": "R5",
+      "dinner": "R6"
+    },
+    {
+      "date": "2026-10-21",
+      "breakfast": "R7",
+      "lunch": "R3",
+      "dinner": "R8"
+    },
+    {
+      "date": "2026-10-22",
+      "breakfast": "R1",
+      "lunch": "R8",
+      "dinner": "R2"
+    },
+    {
+      "date": "2026-10-23",
+      "breakfast": "R4",
+      "lunch": "R2",
+      "dinner": "R5"
+    },
+    {
+      "date": "2026-10-24",
+      "breakfast": "R7",
+      "lunch": "R5",
+      "dinner": "R3"
+    },
+    {
+      "date": "2026-10-25",
+      "breakfast": "R1",
+      "lunch": "R6",
+      "dinner": "R8"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "R1",
+      "name": "시금치죽 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-10-19",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-10-22",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-10-25",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2025-10-24",
+        "meal": "오전간식",
+        "name": "시금치죽",
+        "posted": "2025-09-15",
+        "postTitle": "2025년 10월 식단 및 레시피(1-2세)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3164&table_id=table_1670337543",
+        "filename": "2025년 10월 1-2세 알레르기 식단 레시피.xlsx",
+        "sheet": "4주",
+        "range": "A144:H149",
+        "dateCell": "A144"
+      }
+    },
+    {
+      "id": "R2",
+      "name": "달걀고구마진밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-10-19",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-10-22",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-10-23",
+          "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2025-10-25",
+        "meal": "중식",
+        "name": "달걀고구마진밥",
+        "posted": "2025-09-15",
+        "postTitle": "2025년 10월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3163&table_id=table_1670337543",
+        "filename": "2025년 10월 완료기 이유식 레시피.xlsx",
+        "sheet": "4주",
+        "range": "A68:F72",
+        "dateCell": "A66"
+      }
+    },
+    {
+      "id": "R3",
+      "name": "닭고기청경채진밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-10-19",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-10-21",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-10-24",
+          "meal": "저녁"
+        }
+      ],
+      "source": {
+        "sourceDate": "2025-10-20",
+        "meal": "중식",
+        "name": "닭고기청경채진밥",
+        "posted": "2025-09-15",
+        "postTitle": "2025년 10월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3163&table_id=table_1670337543",
+        "filename": "2025년 10월 완료기 이유식 레시피.xlsx",
+        "sheet": "4주",
+        "range": "A8:F12",
+        "dateCell": "A4"
+      }
+    },
+    {
+      "id": "R4",
+      "name": "닭고기 채소 볶음밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-10-20",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-10-23",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2025-10-22",
+        "meal": "오전간식",
+        "name": "닭고기 채소 볶음밥",
+        "posted": "2025-09-15",
+        "postTitle": "2025년 10월 식단 및 레시피(1-2세)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3164&table_id=table_1670337543",
+        "filename": "2025년 10월 1-2세 알레르기 식단 레시피.xlsx",
+        "sheet": "4주",
+        "range": "A81:H91",
+        "dateCell": "A75"
+      }
+    },
+    {
+      "id": "R5",
+      "name": "두부양파진밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-10-20",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-10-23",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-10-24",
+          "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2025-10-15",
+        "meal": "중식",
+        "name": "두부양파진밥",
+        "posted": "2025-09-15",
+        "postTitle": "2025년 10월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3163&table_id=table_1670337543",
+        "filename": "2025년 10월 완료기 이유식 레시피.xlsx",
+        "sheet": "3주",
+        "range": "A37:F41",
+        "dateCell": "A33"
+      }
+    },
+    {
+      "id": "R6",
+      "name": "순살임연수당근진밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-10-20",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-10-25",
+          "meal": "점심"
+        }
+      ],
+      "source": {
+        "sourceDate": "2025-10-30",
+        "meal": "중식",
+        "name": "순살임연수당근진밥",
+        "posted": "2025-09-15",
+        "postTitle": "2025년 10월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3163&table_id=table_1670337543",
+        "filename": "2025년 10월 완료기 이유식 레시피.xlsx",
+        "sheet": "5주",
+        "range": "A43:F47",
+        "dateCell": "A39"
+      }
+    },
+    {
+      "id": "R7",
+      "name": "닭갈비 볶음밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-10-21",
+          "meal": "아침"
+        },
+        {
+          "date": "2026-10-24",
+          "meal": "아침"
+        }
+      ],
+      "source": {
+        "sourceDate": "2025-10-04",
+        "meal": "오전간식",
+        "name": "닭갈비 볶음밥",
+        "posted": "2025-09-15",
+        "postTitle": "2025년 10월 식단 및 레시피(1-2세)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3164&table_id=table_1670337543",
+        "filename": "2025년 10월 1-2세 알레르기 식단 레시피.xlsx",
+        "sheet": "1주",
+        "range": "A77:H87",
+        "dateCell": "A75"
+      }
+    },
+    {
+      "id": "R8",
+      "name": "소고기브로콜리진밥 (무염)",
+      "usedDates": [
+        {
+          "date": "2026-10-21",
+          "meal": "저녁"
+        },
+        {
+          "date": "2026-10-22",
+          "meal": "점심"
+        },
+        {
+          "date": "2026-10-25",
+          "meal": "저녁"
+        }
+      ],
+      "source": {
+        "sourceDate": "2025-10-11",
+        "meal": "중식",
+        "name": "소고기브로콜리진밥",
+        "posted": "2025-09-15",
+        "postTitle": "2025년 10월 식단 및 레시피(이유식)",
+        "postUrl": "https://www.eunpyeongcenter.co.kr/sub02/sub01.php?type=view&uid=3163&table_id=table_1670337543",
+        "filename": "2025년 10월 완료기 이유식 레시피.xlsx",
+        "sheet": "2주",
+        "range": "A17:F21",
+        "dateCell": "A15"
+      }
+    }
+  ],
+  "note": "공개 원문 색인에서 추출한 출처를 가정용 무염 기준으로 재구성한 자동 생성 기록입니다."
+}
