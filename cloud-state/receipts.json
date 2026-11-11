@@ -123,5 +123,18 @@
     ],
     "total": 5,
     "sentAt": "2026-11-04T18:22:59.024Z"
+  },
+  "week-2026-11-16": {
+    "hash": "41afa553b3f725dee2a3ec91f3d1f298fe967be5f75bec969d0fc0f30f94d1f1",
+    "status": "sent",
+    "messageIds": [
+      49,
+      50,
+      51,
+      52,
+      53
+    ],
+    "total": 5,
+    "sentAt": "2026-11-11T18:18:08.265Z"
   }
 }
